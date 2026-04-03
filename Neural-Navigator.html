@@ -37,6 +37,15 @@
       color: #38bdf8;
       text-decoration: none;
       font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: #1e293b;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background: #334155;
+      transform: translateY(-2px);
     }
 
     section {
@@ -91,11 +100,39 @@
       transform: translateY(-3px);
     }
 
+    iframe {
+      width: 100%;
+      height: 80vh; /* takes a big chunk of the page */
+      border: 2px solid #1e293b;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
       color: #64748b;
       border-top: 1px solid #1e293b;
+    }
+
+    .bottom-link {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .bottom-link a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background: #1e293b;
+      transition: 0.3s;
+    }
+
+    .bottom-link a:hover {
+      background: #334155;
+      transform: translateY(-3px);
     }
   </style>
 </head>
@@ -103,40 +140,34 @@
 
   <header>
     <h1>Neural Navigator</h1>
-    <p>An AI database and interactive tool for exploring AI concepts</p>
+    <p>An AI database and interactive tool for exploring AI tools</p>
     <nav>
-      <a href="#overview">Overview</a>
-      <a href="#links">Links</a>
+      <a href="#overview">Home</a>
+      <a href="https://neural-navigator--chahatesh.replit.app/index.html" target="_blank">Replit</a>
     </nav>
   </header>
 
   <section id="overview">
     <h2>Project Overview</h2>
     <p>
-      Neural Navigator is a project designed to make AI concepts easier to explore and understand. 
-      Users can browse AI categories, search for specific AI tools, and interact with a structured database. 
-      This project demonstrates coding skills, AI knowledge, and a focus on educational tools.
+      Neural Navigator is a project I built in 2026 while I was in 8th grade, aimed at making AI concepts more accessible and easier to explore for students, hobbyists, and beginners. 
+      The idea came from noticing how difficult it can be to find the right AI tools for specific tasks, as information is often scattered across multiple websites, forums, and platforms. 
+      This project organizes AI tools and resources into a structured database, allowing users to browse categories, search for specific tools, and interact with an intuitive interface that guides them to relevant resources quickly and efficiently. 
+      Neural Navigator solves the problem of scattered AI resources, helping users find tools without wasting time and making AI education easier.
     </p>
   </section>
 
-  <section id="links">
-    <h2>Explore the Project</h2>
-    <div class="projects">
-      <div class="card">
-        <h3>GitHub Repository</h3>
-        <p>View all the code, contributions, and version history</p>
-        <a href="https://chahatesh.github.io/Neural-Navigator/" target="_blank">GitHub</a>
-      </div>
-      <div class="card">
-        <h3>Replit Live Project</h3>
-        <p>Run Neural Navigator directly in your browser</p>
-        <a href="https://neural-navigator--chahatesh.replit.app/index.html" target="_blank">Replit</a>
-      </div>
-    </div>
+  <section id="github">
+    <h2>GitHub Project</h2>
+    <iframe src="https://chahatesh.github.io/Neural-Navigator/" title="GitHub Project"></iframe>
   </section>
 
+  <div class="bottom-link">
+    <a href="https://neural-navigator--chahatesh.replit.app/index.html" target="_blank">Open Replit Project</a>
+  </div>
+
   <footer>
-    © 2026 Chahatesh | Built with ❤️ and code
+    © 2026 Chahatesh
   </footer>
 
 </body>
