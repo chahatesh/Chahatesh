@@ -1,153 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Chahatesh | Portfolio</title>
-
-<style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0f172a;
-    color: white;
-  }
-
-  header {
-    padding: 30px;
-    text-align: center;
-    background: #020617;
-    border-bottom: 1px solid #1e293b;
-  }
-
-  header h1 {
-    margin: 0;
-    font-size: 2.5em;
-  }
-
-  header p {
-    color: #94a3b8;
-  }
-
-  nav {
-    margin-top: 15px;
-  }
-
-  nav a {
-    margin: 0 10px;
-    color: #38bdf8;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  section {
-    padding: 50px;
-    max-width: 1000px;
-    margin: auto;
-  }
-
-  h2 {
-    border-bottom: 2px solid #1e293b;
-    padding-bottom: 10px;
-  }
-
-  .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-  }
-
-  .card {
-    background: #1e293b;
-    padding: 20px;
-    border-radius: 12px;
-    transition: 0.3s;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-    background: #334155;
-  }
-
-  .card h3 {
-    margin-top: 0;
-  }
-
-  .card a {
-    color: #38bdf8;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  footer {
-    text-align: center;
-    padding: 20px;
-    color: #64748b;
-    border-top: 1px solid #1e293b;
-  }
-</style>
+  <meta charset="UTF-8">
+  <title>Chahatesh Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
 
-<header>
-  <h1>Chahatesh 🚀</h1>
-  <p>Builder | Coding • Robotics • Business</p>
+  <!-- HEADER + NAV -->
+  <header>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <h1>Chahatesh 🚀</h1>
+    <p>Student coder, robotics enthusiast, and future entrepreneur</p>
+  </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm an 8th-9th grade student passionate about coding, robotics, business, and making stuff.
+      I love creating projects that build skills and can go on my diploma. This portfolio shows some of my work.
+    </p>
+  </section>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I'm a student passionate about building technology that solves real problems.
-    I work on coding projects, robotics, and business ideas.
-    Currently, I'm developing a school Q&A platform that helps students collaborate and learn faster.
-  </p>
-</section>
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <h2>Projects</h2>
 
-<section id="projects">
-  <h2>Projects</h2>
-
-  <div class="projects">
-
-    <div class="card">
-      <h3>📚 School Q&A App</h3>
-      <p>A Reddit-style platform where students ask questions and earn points by helping others.</p>
-      <a href="#">View Project</a>
+    <!-- Neural Navigator Project -->
+    <div class="project">
+      <h3>Neural Navigator</h3>
+      <p>
+        An AI database and interactive tool for exploring AI concepts. 
+        This project exists to demonstrate AI navigation, coding skills, and student-focused tools.
+      </p>
+      <div class="project-links">
+        <a href="https://chahatesh.github.io/Neural-Navigator/" target="_blank">GitHub</a>
+        <a href="https://neural-navigator--chahatesh.replit.app/index.html" target="_blank">Replit</a>
+      </div>
     </div>
 
-    <div class="card">
-      <h3>🤖 Robotics Project</h3>
-      <p>A robot built using sensors and code to complete tasks automatically.</p>
-      <a href="#">View Project</a>
-    </div>
+    <!-- Add more projects here following the same structure -->
+  </section>
 
-    <div class="card">
-      <h3>💻 Future Project</h3>
-      <p>Add your next project here!</p>
-      <a href="#">View Project</a>
-    </div>
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>You can reach me at <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+  </section>
 
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>
-    Email: your@email.com <br>
-    GitHub: <a href="#" style="color:#38bdf8;">Your GitHub</a> <br>
-    YouTube: <a href="#" style="color:#38bdf8;">Your Channel</a>
-  </p>
-</section>
-
-<footer>
-  <p>© 2026 Chahatesh. Built with code 💻</p>
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Chahatesh. All projects built with code 💻</p>
+  </footer>
 
 </body>
 </html>
