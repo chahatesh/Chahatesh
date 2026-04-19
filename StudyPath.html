@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>StudyPath | Chahatesh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #04091a;
+      --bg2:     #070f24;
+      --surface: #0c1a35;
+      --surf2:   #102040;
+      --border:  #172e58;
+      --bord2:   #1e3a6e;
+      --accent:  #2563eb;
+      --acc2:    #38bdf8;
+      --acc3:    #60a5fa;
+      --text:    #dde8f8;
+      --muted:   #6e93c0;
+      --dim:     #334e74;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;}
+
+    .bg-grid{position:fixed;inset:0;z-index:0;pointer-events:none;
+      background-image:linear-gradient(rgba(37,99,235,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,.035) 1px,transparent 1px);
+      background-size:72px 72px;}
+    .orb{position:fixed;border-radius:50%;filter:blur(140px);pointer-events:none;z-index:0;}
+    .orb1{width:700px;height:700px;background:#0d3585;opacity:.12;top:-200px;left:-150px;}
+    .orb2{width:500px;height:500px;background:#061e5a;opacity:.15;bottom:-100px;right:-150px;}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;height:64px;padding:0 52px;
+      display:flex;align-items:center;justify-content:space-between;
+      background:rgba(4,9,26,.82);backdrop-filter:blur(20px) saturate(1.4);
+      border-bottom:1px solid var(--border);}
+    .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:var(--acc2);text-decoration:none;}
+    .nav-right{display:flex;gap:6px;}
+    .nav-pill{color:var(--muted);text-decoration:none;font-size:.82rem;font-weight:500;
+      padding:7px 16px;border-radius:8px;border:1px solid transparent;transition:all .2s;}
+    .nav-pill:hover{color:var(--acc2);background:rgba(37,99,235,.1);border-color:var(--border);}
+    .nav-pill.cta{background:var(--accent);color:#fff;}
+    .nav-pill.cta:hover{background:#1d4ed8;transform:translateY(-1px);}
+
+    .page{position:relative;z-index:1;}
+
+    /* HERO */
+    .hero{max-width:1060px;margin:0 auto;padding:140px 52px 90px;}
+    .crumb{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--dim);margin-bottom:28px;}
+    .crumb a{color:var(--acc2);text-decoration:none;}
+    .crumb a:hover{text-decoration:underline;}
+    .chip{display:inline-flex;align-items:center;gap:8px;
+      background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.35);
+      border-radius:100px;padding:5px 14px;
+      font-size:.7rem;color:var(--acc2);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:22px;}
+    .chip .dot-live{width:6px;height:6px;border-radius:50%;background:var(--acc2);animation:blink 2s infinite;}
+    @keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+    .hero h1{font-family:'Syne',sans-serif;font-size:clamp(3rem,7vw,5.5rem);
+      font-weight:800;letter-spacing:-3px;line-height:.95;margin-bottom:28px;}
+    .hero h1 .g{background:linear-gradient(120deg,#38bdf8 0%,#60a5fa 50%,#818cf8 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .hero-desc{font-size:1.05rem;color:var(--muted);max-width:580px;line-height:1.75;font-weight:300;margin-bottom:40px;}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+    .btn{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;font-weight:600;
+      padding:12px 26px;border-radius:10px;text-decoration:none;transition:all .2s;border:1px solid transparent;}
+    .btn-blue{background:var(--accent);color:#fff;}
+    .btn-blue:hover{background:#1d4ed8;transform:translateY(-2px);box-shadow:0 10px 36px rgba(37,99,235,.4);}
+    .btn-ghost{color:var(--acc2);border-color:var(--bord2);}
+    .btn-ghost:hover{background:rgba(37,99,235,.08);border-color:var(--accent);transform:translateY(-2px);}
+
+    /* DIVIDER */
+    .div{height:1px;margin:0 52px;background:linear-gradient(90deg,transparent,var(--bord2) 30%,var(--bord2) 70%,transparent);}
+
+    /* SECTION */
+    .section{padding:72px 52px;max-width:1060px;margin:0 auto;}
+    .eyebrow{font-size:.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--acc2);margin-bottom:8px;}
+    .sec-title{font-family:'Syne',sans-serif;font-size:clamp(1.4rem,2.5vw,1.9rem);
+      font-weight:700;letter-spacing:-.5px;margin-bottom:36px;color:var(--text);}
+
+    /* OVERVIEW */
+    .overview{background:var(--surface);border:1px solid var(--bord2);border-radius:20px;padding:44px;position:relative;overflow:hidden;}
+    .overview::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg,var(--accent),var(--acc2),var(--acc3));}
+    .overview p{font-size:1rem;line-height:1.88;color:var(--muted);font-weight:300;}
+    .overview p+p{margin-top:18px;}
+    .overview strong{color:var(--text);font-weight:500;}
+
+    /* QUOTE BANNER */
+    .quote-banner{background:linear-gradient(135deg,var(--surface),var(--surf2));
+      border:1px solid var(--bord2);border-radius:20px;padding:52px 48px;text-align:center;
+      position:relative;overflow:hidden;}
+    .quote-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg,var(--accent),var(--acc2),var(--acc3));}
+    .quote-banner blockquote{font-family:'Syne',sans-serif;font-size:clamp(1.15rem,2.5vw,1.6rem);
+      font-weight:700;color:var(--text);letter-spacing:-.5px;max-width:700px;margin:0 auto;line-height:1.45;}
+    .quote-banner blockquote span{background:linear-gradient(120deg,var(--acc2),var(--acc3));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .quote-mark{font-size:4rem;color:var(--bord2);font-family:'Syne',sans-serif;line-height:1;
+      margin-bottom:12px;display:block;}
+
+    /* LEARNING STYLES GRID */
+    .styles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    .style-card{background:var(--surface);border:1px solid var(--bord2);border-radius:16px;
+      padding:30px 24px;text-align:center;transition:all .28s;position:relative;overflow:hidden;}
+    .style-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+      background:linear-gradient(90deg,var(--accent),var(--acc2));opacity:0;transition:opacity .28s;}
+    .style-card:hover{border-color:var(--accent);background:var(--surf2);transform:translateY(-6px);}
+    .style-card:hover::after{opacity:1;}
+    .style-emoji{font-size:2.4rem;margin-bottom:16px;}
+    .style-card h3{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:10px;color:var(--text);}
+    .style-card p{font-size:.86rem;color:var(--muted);line-height:1.65;}
+
+    /* FEATURES GRID */
+    .features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+    .feat-card{background:var(--surface);border:1px solid var(--bord2);border-radius:16px;padding:28px;transition:all .22s;}
+    .feat-card:hover{border-color:var(--accent);background:var(--surf2);transform:translateY(-4px);}
+    .feat-num{font-size:.7rem;font-weight:700;color:var(--acc2);letter-spacing:2px;margin-bottom:10px;}
+    .feat-icon{font-size:1.75rem;margin-bottom:12px;}
+    .feat-card h3{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:8px;color:var(--text);}
+    .feat-card p{font-size:.87rem;color:var(--muted);line-height:1.65;}
+
+    /* TECH GRID */
+    .tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;}
+    .tech-card{background:var(--surface);border:1px solid var(--bord2);border-radius:14px;padding:22px 24px;
+      display:flex;align-items:flex-start;gap:16px;transition:all .22s;}
+    .tech-card:hover{border-color:var(--accent);background:var(--surf2);transform:translateY(-3px);}
+    .t-icon{font-size:1.6rem;width:38px;text-align:center;flex-shrink:0;margin-top:2px;}
+    .t-name{font-weight:600;font-size:.9rem;color:var(--text);}
+    .t-desc{font-size:.76rem;color:var(--muted);margin-top:3px;line-height:1.5;}
+
+    /* FIREBASE HIGHLIGHT */
+    .firebase-highlight{
+      grid-column: 1 / -1;
+      background:linear-gradient(135deg,var(--surface),var(--surf2));
+      border:1px solid var(--acc2);
+      border-radius:14px;padding:26px 28px;
+      display:flex;align-items:flex-start;gap:20px;
+      position:relative;overflow:hidden;
+    }
+    .firebase-highlight::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;
+      background:linear-gradient(to bottom,var(--accent),var(--acc2));}
+    .firebase-highlight .t-icon{margin-top:0;}
+    .firebase-highlight .t-name{font-size:1rem;margin-bottom:6px;}
+    .firebase-highlight .t-desc{font-size:.85rem;line-height:1.65;color:var(--muted);}
+    .firebase-highlight .t-desc strong{color:var(--acc2);font-weight:600;}
+
+    /* TIMELINE */
+    .timeline{position:relative;padding-left:36px;}
+    .timeline::before{content:'';position:absolute;left:0;top:12px;bottom:12px;width:2px;
+      background:linear-gradient(to bottom,var(--accent),var(--bord2) 85%,transparent);border-radius:2px;}
+    .tl-item{position:relative;margin-bottom:10px;
+      background:var(--surface);border:1px solid var(--bord2);border-radius:14px;padding:24px 28px;transition:all .22s;}
+    .tl-item:last-child{margin-bottom:0;}
+    .tl-item::before{content:'';position:absolute;left:-43px;top:27px;
+      width:14px;height:14px;border-radius:50%;
+      background:var(--bg2);border:2px solid var(--acc2);box-shadow:0 0 0 4px rgba(56,189,248,.12);}
+    .tl-item:hover{border-color:var(--acc2);background:var(--surf2);transform:translateX(5px);}
+    .tl-date{font-size:.78rem;font-weight:700;color:var(--acc2);letter-spacing:.5px;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+    .tl-date::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--acc2);}
+    .tl-item p{font-size:.9rem;color:var(--muted);line-height:1.7;font-weight:300;}
+
+    /* FUTURE */
+    .future-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;}
+    .future-item{background:var(--surface);border:1px solid var(--bord2);border-radius:12px;
+      padding:16px 20px;display:flex;align-items:center;gap:12px;transition:all .2s;}
+    .future-item:hover{border-color:var(--accent);transform:translateX(4px);}
+    .future-dot{width:8px;height:8px;border-radius:50%;background:var(--acc2);flex-shrink:0;}
+    .future-text{font-size:.87rem;color:var(--muted);}
+
+    /* FOOTER */
+    footer{position:relative;z-index:1;border-top:1px solid var(--border);padding:28px 52px;
+      display:flex;align-items:center;justify-content:space-between;color:var(--dim);font-size:.82rem;}
+    footer a{color:var(--acc2);text-decoration:none;}
+    footer a:hover{text-decoration:underline;}
+
+    @media(max-width:900px){
+      .styles-grid{grid-template-columns:1fr;}
+      .features-grid{grid-template-columns:1fr;}
+    }
+    @media(max-width:768px){
+      nav,footer{padding-left:20px;padding-right:20px;}
+      .hero,.section{padding-left:20px;padding-right:20px;}
+      .div{margin:0 20px;}
+    }
+  </style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+
+<nav>
+  <a class="nav-logo" href="index.html">Chahatesh</a>
+  <div class="nav-right">
+    <a class="nav-pill" href="index.html">← Home</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="crumb"><a href="index.html">Home</a><span>›</span><span>StudyPath</span></div>
+    <div class="chip"><span class="dot-live"></span>In Development</div>
+    <h1>Study<span class="g">Path</span></h1>
+    <p class="hero-desc">An adaptive learning platform that adjusts quizzes, hints, and feedback to match the way each student actually learns — not just the way most students do.</p>
+    <div class="hero-actions">
+      <a class="btn btn-blue" href="#features">Explore Features →</a>
+      <a class="btn btn-ghost" href="index.html">← Back to Portfolio</a>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- OVERVIEW -->
+  <div class="section">
+    <div class="eyebrow">The Idea</div>
+    <div class="sec-title">Project Overview</div>
+    <div class="overview">
+      <p>Many students spend hours studying but struggle to see results — <strong>not because they lack effort, but because their study methods don't match how they learn.</strong> StudyPath is an adaptive learning platform that solves this by combining quizzes, personalized feedback, progress tracking, and structured tools into one unified system.</p>
+      <p>Instead of a one-size-fits-all approach, StudyPath identifies each user's learning style at the start — visual, auditory, or hands-on — and uses that profile throughout the entire experience. Mistakes become learning moments. Feedback becomes personal. Studying becomes more effective.</p>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- CORE CONCEPT -->
+  <div class="section">
+    <div class="eyebrow">Core Philosophy</div>
+    <div class="sec-title">The Big Idea</div>
+    <div class="quote-banner">
+      <span class="quote-mark">"</span>
+      <blockquote>
+        People learn differently, so studying should adapt to the learner —<br>
+        <span>not the other way around.</span>
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- LEARNING STYLES -->
+  <div class="section">
+    <div class="eyebrow">Personalization</div>
+    <div class="sec-title">Learning Styles</div>
+    <div class="styles-grid">
+      <div class="style-card">
+        <div class="style-emoji">👁️</div>
+        <h3>Visual Learner</h3>
+        <p>Learns through images and diagrams. Gets diagram-based hints and mental visualization prompts when they answer incorrectly.</p>
+      </div>
+      <div class="style-card">
+        <div class="style-emoji">🎧</div>
+        <h3>Auditory Learner</h3>
+        <p>Learns through listening and verbal explanation. Guided to read through and talk out explanations step by step.</p>
+      </div>
+      <div class="style-card">
+        <div class="style-emoji">🛠️</div>
+        <h3>Hands-On Learner</h3>
+        <p>Learns through doing and practice. Receives detailed step-by-step reasoning guidance that walks through each problem.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- KEY FEATURES -->
+  <div class="section" id="features">
+    <div class="eyebrow">What's Inside</div>
+    <div class="sec-title">Key Features</div>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-num">01</div>
+        <div class="feat-icon">📊</div>
+        <h3>Progress Dashboard</h3>
+        <p>A central hub showing subjects tracked, quizzes completed, and average performance. Students can see real improvement over time and stay motivated.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">02</div>
+        <div class="feat-icon">📚</div>
+        <h3>Subject-Based Learning</h3>
+        <p>Structured subjects with organized quizzes inside each one. Learning is broken into manageable sections so students aren't overwhelmed all at once.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">03</div>
+        <div class="feat-icon">🧪</div>
+        <h3>Adaptive Quiz Engine</h3>
+        <p>When you get a question wrong, the system doesn't just show the answer — it gives a personalized hint based on your learning style so you actually understand it.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">04</div>
+        <div class="feat-icon">💡</div>
+        <h3>Style-Based Feedback</h3>
+        <p>Every mistake becomes a learning opportunity. Visual learners get diagrams, auditory learners get guided explanations, hands-on learners get step-by-step walkthroughs.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">05</div>
+        <div class="feat-icon">📝</div>
+        <h3>Built-In Notes System</h3>
+        <p>Students can capture key information while studying directly inside the platform — building personalized study material without switching apps.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-num">06</div>
+        <div class="feat-icon">🔁</div>
+        <h3>Infinite Learning Path</h3>
+        <p>An adaptive practice mode that continuously generates questions. Instead of ending after a quiz, it reinforces concepts through repetition and variation.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- UNDER THE HOOD -->
+  <div class="section">
+    <div class="eyebrow">Under the Hood</div>
+    <div class="sec-title">Tech Stack</div>
+    <div class="tech-grid">
+
+      <!-- Firebase highlight card spanning full width -->
+      <div class="firebase-highlight">
+        <div class="t-icon">🔥</div>
+        <div>
+          <div class="t-name">Firebase — The Backbone of StudyPath</div>
+          <div class="t-desc">
+            Firebase was chosen as the primary backend because it makes <strong>content management effortless for moderators</strong>. Instead of editing code every time a quiz question needs to change, moderators and admins can add, edit, or remove questions directly from the Firebase console — no redeploy needed. This keeps the question bank fresh and growing without any developer involvement. On top of that, Firebase handles <strong>user authentication</strong>, <strong>real-time data syncing</strong> for progress and quiz state, and a <strong>flexible database structure</strong> that scales as new subjects and features are added.
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-card"><div class="t-icon">🔐</div><div><div class="t-name">Firebase Auth</div><div class="t-desc">Login, accounts & role-based access</div></div></div>
+      <div class="tech-card"><div class="t-icon">🗃️</div><div><div class="t-name">Firestore DB</div><div class="t-desc">Quiz questions, progress & notes</div></div></div>
+      <div class="tech-card"><div class="t-icon">⚡</div><div><div class="t-name">Real-time Sync</div><div class="t-desc">Live progress updates across sessions</div></div></div>
+      <div class="tech-card"><div class="t-icon">🛡️</div><div><div class="t-name">Role System</div><div class="t-desc">Students, Admins & Moderators</div></div></div>
+      <div class="tech-card"><div class="t-icon">🧩</div><div><div class="t-name">Adaptive Engine</div><div class="t-desc">Style-based hint logic per user</div></div></div>
+      <div class="tech-card"><div class="t-icon">📈</div><div><div class="t-name">Analytics Layer</div><div class="t-desc">Performance tracking over time</div></div></div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- TIMELINE -->
+  <div class="section">
+    <div class="eyebrow">Development History</div>
+    <div class="sec-title">Work Timeline</div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">Project Kickoff</div>
+        <p>Identified the core problem: students study hard but often use methods that don't match how they learn. Defined the three learning styles and began designing the adaptive quiz system around them.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Firebase Setup</div>
+        <p>Set up Firebase Authentication and Firestore. Designed the database structure to support multiple subjects, quiz questions per subject, and user-level progress tracking — with moderator roles built in from the start.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Quiz Engine</div>
+        <p>Built the adaptive quiz engine. The key logic: when a user gets a question wrong, the system checks their learning style profile and returns a different type of hint rather than just showing the answer.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Dashboard & Notes</div>
+        <p>Built the progress dashboard showing quizzes completed and average score. Added the built-in notes system so students can jot down key information without leaving the app.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Learning Path Mode</div>
+        <p>Implemented the infinite practice mode — an adaptive loop that continuously generates or recycles questions to reinforce concepts through repetition instead of stopping after a single quiz.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">In Progress</div>
+        <p>Currently refining the learning style detection, expanding the subject library, and exploring AI-powered explanation generation for more dynamic and personalized feedback at scale.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- FUTURE -->
+  <div class="section">
+    <div class="eyebrow">What's Next</div>
+    <div class="sec-title">Planned Improvements</div>
+    <div class="future-grid">
+      <div class="future-item"><div class="future-dot"></div><div class="future-text">AI-powered adaptive explanations</div></div>
+      <div class="future-item"><div class="future-dot"></div><div class="future-text">Advanced learning style detection</div></div>
+      <div class="future-item"><div class="future-dot"></div><div class="future-text">Expanded subject library</div></div>
+      <div class="future-item"><div class="future-dot"></div><div class="future-text">Deeper performance analytics</div></div>
+      <div class="future-item"><div class="future-dot"></div><div class="future-text">Enhanced moderator content tools</div></div>
+      <div class="future-item"><div class="future-dot"></div><div class="future-text">Moderator role for question management</div></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <span>© 2026 Chahatesh — Built with code 💻</span>
+  <a href="index.html">← Back to Portfolio</a>
+</footer>
+</body>
+</html>
