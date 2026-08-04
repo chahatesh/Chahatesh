@@ -187,7 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateThemeIcon() {
     if (!themeToggle) return;
     const isLight = document.body.classList.contains('light-mode');
-    themeToggle.textContent = isLight ? '🌙' : '☀️';
     themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
   }
   updateThemeIcon();
@@ -225,39 +224,6 @@ document.addEventListener('DOMContentLoaded', () => {
       line.appendChild(span);
     });
   });
-
-  const typeEl = document.getElementById('type-word');
-  if (typeEl) {
-    const words = ['building', 'coding', 'learning', 'inventing', 'creating', 'solving'];
-    let wordIdx = 0;
-    let charIdx = 0;
-    let deleting = false;
-
-    function type() {
-      const current = words[wordIdx];
-      const display = current.substring(0, deleting ? charIdx - 1 : charIdx + 1);
-      typeEl.textContent = display;
-
-      if (!deleting) {
-        charIdx++;
-        if (charIdx === current.length) {
-          deleting = true;
-          setTimeout(type, 2000);
-          return;
-        }
-      } else {
-        charIdx--;
-        if (charIdx === 0) {
-          deleting = false;
-          wordIdx = (wordIdx + 1) % words.length;
-          setTimeout(type, 400);
-          return;
-        }
-      }
-      setTimeout(type, deleting ? 55 : 120);
-    }
-    type();
-  }
 
   const hamburger = document.querySelector('.hamburger');
   const mobileNav = document.querySelector('.mobile-nav');
