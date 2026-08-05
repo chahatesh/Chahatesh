@@ -12,14 +12,6 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Chahatesh — 13-Year-Old AI, Robotics & Software Engineer" />
   <meta property="og:description" content="Building AI, robotics, and software that solve real-world problems." />
-  <meta property="og:image" content="https://yourdomain.com/preview.jpg" />
-  <meta property="og:url" content="https://yourdomain.com" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Chahatesh — 13-Year-Old AI, Robotics & Software Engineer" />
-  <meta name="twitter:description" content="Building AI, robotics, and software that solve real-world problems." />
-  <meta name="twitter:image" content="https://yourdomain.com/preview.jpg" />
-
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%2345a29e' stroke-width='8'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='%23f6f6f8' font-family='Arial'%3EC%3C/text%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,21 +81,24 @@
   <section id="about" class="about-section">
     <div class="section-title">
       <div>
-        <h2>About Me</h2>
-        <p>Student engineer, developer, and maker.</p>
+        <h2>My Journey</h2>
+        <p>How I went from breaking things to building them.</p>
       </div>
     </div>
 
     <div class="about-layout reveal">
       <div class="glass about-card">
         <p class="lead">
-          Hi! I'm Chahatesh, a 13-year-old student engineer, developer, and maker passionate about building projects that combine <strong>AI, robotics, software, electronics, and mechanical engineering</strong>.
+          I was the kid who took apart every remote and circuit board I could find, never putting them back together properly. Now I actually know how to put things back together. Sometimes better than they were before.
         </p>
         <p>
-          I enjoy taking ambitious ideas from concept to reality — designing custom hardware in CAD, programming intelligent software, building embedded systems, and 3D printing functional prototypes. My goal is to create technology that is not only technically impressive but also useful and accessible.
+          I started coding at 8 with Python tutorials and spent weeks crashing programs I thought were bulletproof. I built my first robot for VEX IQ and watched it lose spectacularly in the first competition (burned out a motor on the drive train). But I came back, redesigned the drivetrain, and eventually qualified for state. Twice.
         </p>
         <p>
-          Outside of building projects, I'm a <strong>Stardance Ambassador</strong> and an active <strong>STEM mentor</strong>, helping other students learn programming, robotics, CAD, electronics, and engineering. I love sharing what I learn and inspiring others to create.
+          These days I'm building <strong>AI assistants, robotics systems, and software platforms</strong> that actually solve problems I run into day-to-day. I'm a <strong>Stardance Ambassador</strong> and mentor other students, mostly because I remember how frustrating it was to Google "why won't my code compile" at midnight. I also spent way too long debugging a servo calibration issue that turned out to be a single misplaced decimal point.
+        </p>
+        <p>
+          Right now I'm obsessed with making the <strong>Atlas AI</strong> assistant smarter and figuring out how to integrate it with real robotics hardware—which is harder than it sounds.
         </p>
       </div>
       <div class="about-highlights">
@@ -132,39 +127,46 @@
   <section id="projects">
     <div class="section-title">
       <div>
-        <h2>Featured Projects</h2>
-        <p>Deep dives into the work I'm most proud of.</p>
+        <h2>Things I've Built</h2>
+        <p>Some victories, a few debugging marathons, and lessons learned the hard way.</p>
       </div>
-      <a href="projects.html" class="view-all">View All Projects →</a>
+      <a href="projects.html" class="view-all">See everything →</a>
     </div>
 
     <div class="featured-grid">
-      <article class="glass tilt project-card reveal">
-        <img src="https://cdn.hackclub.com/019fccdf-1afe-7972-9eec-9ec147c3f0c9/Screenshot%202026-08-04%20085839.png" alt="Atlas AI preview" class="thumb" loading="lazy" decoding="async" />
-        <span class="project-status">In Development</span>
-        <h3>Atlas AI</h3>
-        <p>My most ambitious project yet — an intelligent AI assistant with memory, vision, voice, tools, and future robotics integration. Currently in closed development.</p>
-        <div class="card-actions">
-          <button class="btn btn-primary" data-open-modal="atlas">View Case Study →</button>
+      <article class="glass tilt project-card project-hero reveal">
+        <div class="project-hero-content">
+          <img src="https://cdn.hackclub.com/019fccdf-1afe-7972-9eec-9ec147c3f0c9/Screenshot%202026-08-04%20085839.png" alt="Atlas AI preview" class="thumb" loading="lazy" decoding="async" />
+          <div class="hero-text">
+            <span class="project-status">Current Obsession</span>
+            <h3>Atlas AI</h3>
+            <p class="project-description">An AI assistant I'm building with memory, vision, voice, and eventually robotics integration. Started as a weekend experiment with groq's API, now its a real project. The hard part isn't the model—it's connecting all the pieces together without it falling apart.</p>
+            <p class="project-meta">Struggling with: Stable context window management when running 10+ tool calls in sequence.</p>
+            <div class="card-actions">
+              <button class="btn btn-primary" data-open-modal="atlas">Deep dive →</button>
+            </div>
+          </div>
         </div>
       </article>
 
       <article class="glass tilt project-card reveal">
         <img src="https://cdn.hackclub.com/019fccf0-1264-7f60-b32c-f24f5a67ba58/IMG_9954%20(1).png" alt="Robotic Arm preview" class="thumb" loading="lazy" decoding="async" />
-        <h3>Robotic Arm</h3>
-        <p>A fully functional robotic arm built from scratch — custom CAD, 3D-printed parts, servos, and forward/inverse kinematics.</p>
+        <span class="project-status">Complete</span>
+        <h3>4-DOF Robotic Arm</h3>
+        <p>Built this from scratch with CAD, 3D-printed parts, and servo motors. First iteration burned out three MG995 servos because I didn't account for torque distribution. Redesigned the gearbox, added reinforced mounts, and now it picks up objects without self-destructing.</p>
         <div class="card-actions">
-          <button class="btn btn-primary" data-open-modal="arm">View Case Study →</button>
+          <button class="btn btn-primary" data-open-modal="arm">See the design →</button>
           <a href="https://www.printables.com/model/1784586-mg955-servo-robot-arm" target="_blank" class="btn btn-secondary">Printables →</a>
         </div>
       </article>
 
       <article class="glass tilt project-card reveal">
         <img src="https://cdn.hackclub.com/019fccf2-eef1-7a34-8722-6ff4cdaae387/Screenshot%202026-08-04%20092439.png" alt="StudyPath preview" class="thumb" loading="lazy" decoding="async" />
+        <span class="project-status">1,000+ Users</span>
         <h3>StudyPath</h3>
-        <p>An adaptive learning platform that scaled to 1,000+ students by personalizing quizzes in real time.</p>
+        <p>Made this because I was frustrated taking the same generic quizzes over and over. Built an adaptive learning system that adjusts question difficulty in real time. Scaled to 1,000+ students with 98% server uptime before I graduated from that school.</p>
         <div class="card-actions">
-          <button class="btn btn-primary" data-open-modal="studypath">View Case Study →</button>
+          <button class="btn btn-primary" data-open-modal="studypath">Read the case study →</button>
           <a href="https://github.com/chahatesh/StudyPath" target="_blank" class="btn btn-secondary">GitHub →</a>
         </div>
       </article>
@@ -174,8 +176,8 @@
   <section id="other-projects">
     <div class="section-title">
       <div>
-        <h2>Other Projects</h2>
-        <p>Quick highlights across AI, robotics, automation, and web development.</p>
+        <h2>Experiments & Side Builds</h2>
+        <p>Weekend projects, weird ideas, and things I shipped just to see if they'd work.</p>
       </div>
     </div>
 
@@ -235,46 +237,49 @@
   <section id="skills">
     <div class="section-title">
       <div>
-        <h2>Skills & Stack</h2>
-        <p>Technologies I use to design, build, and ship real-world systems.</p>
+        <h2>What I Code With</h2>
+        <p>Languages, tools, and frameworks that actually made it into production.</p>
       </div>
     </div>
 
     <div class="skills-grid">
       <article class="glass skill-card reveal">
-        <h3>Programming</h3>
+        <h3>Languages</h3>
         <div class="skill-pills">
-          <span>Python</span><span>C++</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>Arduino</span>
+          <span>Python</span><span>C++</span><span>JavaScript</span><span>HTML/CSS</span><span>Arduino</span>
+        </div>
+        <p class="skill-note">Python got me started, C++ keeps me honest about memory management.</p>
+      </article>
+      <article class="glass skill-card reveal skill-wide">
+        <h3>Robotics & Hardware</h3>
+        <div class="skill-pills">
+          <span>Kinematics</span><span>PID Controllers</span><span>Embedded Systems</span><span>Servo Control</span><span>Arduino Mega</span><span>Sensor Integration</span><span>Motor Drivers</span><span>3D Printing</span>
         </div>
       </article>
       <article class="glass skill-card reveal">
-        <h3>Robotics</h3>
+        <h3>CAD & Design</h3>
         <div class="skill-pills">
-          <span>Mechanical Design</span><span>Embedded Systems</span><span>Motion Control</span><span>PID Controllers</span><span>Robot Kinematics</span><span>Sensor Integration</span><span>Automation</span>
+          <span>Onshape</span><span>FDM Printing</span><span>Mechanical Design</span><span>Figma</span>
+        </div>
+        <p class="skill-note">First Onshape model took 6 hours. Now I can sketch a part in 20 minutes.</p>
+      </article>
+      <article class="glass skill-card reveal skill-wide">
+        <h3>AI & Machine Learning</h3>
+        <div class="skill-pills">
+          <span>LLM APIs</span><span>Prompt Engineering</span><span>Agentic Systems</span><span>Computer Vision</span><span>Tool Calling</span><span>Context Management</span><span>Fine-Tuning</span>
+        </div>
+        <p class="skill-note">Spent 20 hours debugging context window overflow. Turns out I was appending instead of replacing. </p>
+      </article>
+      <article class="glass skill-card reveal">
+        <h3>Software Stack</h3>
+        <div class="skill-pills">
+          <span>Electron</span><span>Firebase</span><span>Node.js</span><span>Git</span><span>REST APIs</span>
         </div>
       </article>
       <article class="glass skill-card reveal">
-        <h3>CAD & Manufacturing</h3>
+        <h3>Tools I Live In</h3>
         <div class="skill-pills">
-          <span>Onshape</span><span>3D Printing</span><span>Functional Prototyping</span><span>Mechanical Assembly</span><span>Product Design</span>
-        </div>
-      </article>
-      <article class="glass skill-card reveal">
-        <h3>AI / Machine Learning</h3>
-        <div class="skill-pills">
-          <span>Large Language Models</span><span>AI APIs</span><span>Prompt Engineering</span><span>Agentic AI</span><span>Computer Vision</span><span>Tool Calling</span><span>AI Workflow Design</span>
-        </div>
-      </article>
-      <article class="glass skill-card reveal">
-        <h3>Software & Web</h3>
-        <div class="skill-pills">
-          <span>Electron</span><span>Firebase</span><span>Git</span><span>GitHub</span><span>REST APIs</span><span>Desktop Applications</span><span>Web Development</span>
-        </div>
-      </article>
-      <article class="glass skill-card reveal">
-        <h3>Tools & Workflow</h3>
-        <div class="skill-pills">
-          <span>VS Code</span><span>Figma</span><span>Chrome DevTools</span><span>Agile</span><span>Technical Writing</span>
+          <span>VS Code</span><span>Chrome DevTools</span><span>CLI</span><span>GitHub</span><span>Figma</span>
         </div>
       </article>
     </div>
@@ -283,20 +288,22 @@
   <section id="achievements">
     <div class="section-title">
       <div>
-        <h2>Achievements</h2>
-        <p>Milestones that mark my growth as a builder and competitor.</p>
+        <h2>Recognition & Milestones</h2>
+        <p>Competitions I competed in, awards that surprised me, and communities I represent.</p>
       </div>
     </div>
 
     <div class="achievements-grid">
       <article class="glass tilt achievement-card reveal">
-        <h3>Connecticut Lieutenant Governor's Computing Challenge</h3>
-        <p>Finalist — Top 10 out of 1,000+ participants statewide — recognized for creativity, technical skill, and innovation in computer science.</p>
+        <span class="achievement-year">2025</span>
+        <h3>CT Lieutenant Governor's Computing Challenge</h3>
+        <p>Finalist. Top 10 out of 1,000+ statewide. Built something unusual enough that the judges asked how I thought of it.</p>
       </article>
 
       <article class="glass tilt achievement-card reveal">
+        <span class="achievement-year">2024-25</span>
         <h3>Stardance Ambassador</h3>
-        <p>Represent one of the world's largest student maker communities, encouraging students to build ambitious engineering projects and explore STEM.</p>
+        <p>Mentor at one of the world's largest student maker networks. Helping others debug their projects because I remember how frustrating it was to be stuck.</p>
       </article>
 
       <article class="glass tilt achievement-card reveal">
