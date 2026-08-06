@@ -1,6 +1,6 @@
 # Chahatesh - Portfolio
 
-I am a 13-year-old student engineer and developer. I build projects that combine AI, robotics, software, electronics, and mechanical engineering. My goal is to turn complex ideas into useful, fast, and accessible systems. 
+I am a 13-year-old student engineer and developer. I build projects that combine AI, robotics, software, electronics, and mechanical engineering. My goal is to turn complex ideas into useful, fast, and accessible systems.   
 
 ---
 
