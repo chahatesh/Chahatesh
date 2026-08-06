@@ -1,11 +1,11 @@
 :root {
-  --bg: #7ecdf2;
-  --card-bg: #7ecdf2;
+  --bg: #0b0c10;
+  --card-bg: #1f2833;
   --surface: rgba(69, 162, 158, 0.06);
   --glass-border: rgba(255, 255, 255, 0.08);
-  --amber: #7ecdf2;
-  --blue: #ffffff;
-  --violet: #ffffff;
+  --amber: #45a29e;
+  --blue: #66fcf1;
+  --violet: #9b59b6;
   --text: #f5f5f7;
   --muted: #c5c6c7;
   --card-text: #dcdde0;
@@ -462,7 +462,7 @@ body.light-mode .theme-toggle::before {
 .mobile-nav {
   position: fixed;
   inset: 0;
-  z-index: 99;
+  z-index: 105;
   background: var(--bg);
   display: flex;
   flex-direction: column;
@@ -953,82 +953,6 @@ body.light-mode .btn-secondary {
 
 body.light-mode .project-status {
   background: rgba(69, 162, 158, 0.12);
-}
-
-.code-snippet-section {
-  padding: 5rem 6%;
-  background: linear-gradient(180deg, rgba(69, 162, 158, 0.04), transparent);
-  margin-top: 3rem;
-}
-
-.code-snippet-section .section-title {
-  margin-bottom: 3rem;
-}
-
-.snippet-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.8rem;
-}
-
-.code-card {
-  padding: 1.6rem;
-  background: rgba(11, 12, 16, 0.6);
-  border: 1px solid rgba(69, 162, 158, 0.15);
-  font-family: 'Monaco', 'Courier New', monospace;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-body.light-mode .code-card {
-  background: rgba(31, 40, 51, 0.08);
-  border: 1px solid rgba(69, 162, 158, 0.2);
-}
-
-.code-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--amber);
-  letter-spacing: 0.5px;
-  margin-bottom: 1rem;
-  padding: 0.4rem 0.8rem;
-  background: rgba(69, 162, 158, 0.1);
-  width: fit-content;
-  border-radius: 4px;
-}
-
-.code-card pre {
-  margin: 0;
-  overflow-x: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(69, 162, 158, 0.3) transparent;
-}
-
-.code-card pre::-webkit-scrollbar {
-  height: 6px;
-}
-
-.code-card pre::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.code-card pre::-webkit-scrollbar-thumb {
-  background: rgba(69, 162, 158, 0.3);
-  border-radius: 3px;
-}
-
-.code-card code {
-  color: var(--card-text);
-  font-size: 0.82rem;
-  line-height: 1.5;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-.code-card code {
-  display: block;
 }
 
 .card-actions {
