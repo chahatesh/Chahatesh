@@ -2,6 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isTouch = window.matchMedia('(pointer: coarse)').matches;
 
+  // Mark "Projects" nav link active when on projects.html
+  if (location.pathname.endsWith('projects.html')) {
+    document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(a => {
+      if (a.getAttribute('href') === 'projects.html') a.classList.add('active');
+    });
+  }
+
   const ALL_PROJECTS = [
     {
       title: 'Atlas AI',
@@ -9,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
       status: 'In Development',
       image: 'https://cdn.hackclub.com/019fccdf-1afe-7972-9eec-9ec147c3f0c9/Screenshot%202026-08-04%20085839.png',
       tech: ['Python', 'LLMs', 'Computer Vision', 'Agentic AI'],
-      description: 'My most ambitious project yet — an intelligent AI assistant with long-term memory, vision, voice, tool calling, workflow automation, and future robotics integration. Currently in closed development.'
+      description: 'My most ambitious project yet — an intelligent AI assistant with long-term memory, vision, voice, tool calling, workflow automation, and future robotics integration. Currently in closed development.',
+      links: []
     },
     {
       title: 'Understand',
@@ -74,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
       image: 'https://placehold.co/800x500/141416/FFFFFF.webp?text=ESP32+Robot+Car',
       tech: ['ESP32', 'Wi-Fi', 'Motor Driver', 'Embedded C'],
       description: 'Developed a Wi-Fi controlled robotic platform while experimenting with wireless communication, motor control, and embedded programming.',
-      links: [{ text: 'No Link', href: '#', primary: false }]
+      links: []
     },
     {
       title: 'Stackable Battery Holder',
@@ -87,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       title: 'Arduino Projects',
       categories: ['robotics'],
-      image: 'https://cdn.hackclub.com/019fcd27-4623-7af5-b8d9-7d2f2775cc54/IMG_0038.MOV',
+      image: 'https://placehold.co/800x500/141416/FFFFFF.webp?text=Arduino+Projects',
       tech: ['Arduino', 'OLED', 'Sensors', 'Audio'],
       description: 'Various embedded systems involving OLED displays, sensors, wireless communication, motor control, audio playback, and automation.',
       links: [{ text: 'YouTube →', href: 'https://www.youtube.com/@CKInnovates', primary: true }]
@@ -135,9 +143,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     grid.innerHTML = projectsToRender.map(project => {
       const statusBadge = project.status ? `<span class="project-status">${project.status}</span>` : '';
-      const links = (project.links || []).map(link =>
-        `<a href="${link.href}" ${link.href.startsWith('http') ? 'target="_blank"' : ''} class="btn ${link.primary ? 'btn-primary' : 'btn-secondary'}">${link.text}</a>`
+      const realLinks = (project.links || []).filter(l => l.href && l.href !== '#');
+      const links = realLinks.map(link =>
+        `<a href="${link.href}" target="_blank" rel="noopener noreferrer" class="btn ${link.primary ? 'btn-primary' : 'btn-secondary'}">${link.text}</a>`
       ).join('');
+      const noLinkNote = realLinks.length === 0 ? `<p class="skill-note" style="margin:0;">No public link yet</p>` : '';
 
       return `
         <article class="glass tilt project-card reveal" data-category="${project.categories.join(' ')}">
@@ -149,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <p>${project.description}</p>
           <div class="card-actions">
-            ${links}
+            ${links}${noLinkNote}
           </div>
         </article>
       `;
@@ -436,8 +446,8 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Atlas AI',
       category: 'AI · Agentic AI · Computer Vision · Robotics Integration',
       image: 'https://cdn.hackclub.com/019fccdf-1afe-7972-9eec-9ec147c3f0c9/Screenshot%202026-08-04%20085839.png',
-      github: 'https://github.com',
-      demo: '#',
+      github: null,
+      demo: null,
       problem: 'Most AI assistants forget context after a session and can\'t act on the physical world. Atlas AI is designed to be a persistent, multi-modal AI that remembers, sees, speaks, uses tools, automates workflows, and eventually controls robots and physical devices.',
       architecture: ['Multi-agent orchestration', 'Long-term memory vector store', 'Computer vision pipeline', 'Voice I/O', 'Tool calling framework', 'Local + cloud LLM routing', 'Workflow automation engine', 'Robotics control interface'],
       challenges: [
@@ -452,7 +462,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Robotic Arm',
       category: 'Robotics · Mechanical Engineering · CAD · Embedded Systems',
       image: 'https://cdn.hackclub.com/019fccf0-1264-7f60-b32c-f24f5a67ba58/IMG_9954%20(1).png',
-      github: 'https://github.com',
+      github: null,
       demo: 'https://www.printables.com/model/1784586-mg955-servo-robot-arm',
       problem: 'Off-the-shelf robotic arms are expensive and closed-source. I wanted to design a fully custom, 3D-printed arm to learn kinematics, mechanical design, and embedded control from the ground up.',
       architecture: ['Custom Onshape CAD', '3D printed PLA/PETG components', 'Servo motor actuation', 'Custom control PCB / Arduino', 'Forward & inverse kinematics solver', 'Modular end-effector mount'],
@@ -482,8 +492,8 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Understand',
       category: 'AI · Computer Vision · Desktop Assistant',
       image: 'https://cdn.hackclub.com/019fccf8-7bec-7f63-b0cd-d416628d934e/Screenshot%202026-08-04%20093047.png',
-      github: 'https://github.com',
-      demo: '#',
+      github: 'https://github.com/chahatesh/Understand',
+      demo: 'https://github.com/chahatesh/Understand/releases',
       problem: 'Developers and designers lose hours switching between their screen and AI chat windows, manually describing bugs and UI issues. Understand gives your desktop vision: it captures the screen, identifies problems, and crafts optimized prompts automatically.',
       architecture: ['OpenAI GPT-4 Vision', 'Python / FastAPI backend', 'Electron desktop shell', 'OpenCV preprocessing', 'In-memory context cache'],
       challenges: [
@@ -497,8 +507,8 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Neural Navigator',
       category: 'AI · Knowledge Base · NLP',
       image: 'https://cdn.hackclub.com/019fcd23-e546-7a10-acba-7bcf304efaa9/Screenshot%202026-08-04%20101801.png',
-      github: 'https://github.com',
-      demo: '#',
+      github: 'https://github.com/chahatesh/Neural-Navigator',
+      demo: 'https://neural-navigator--chahatesh.replit.app/',
       problem: 'Students scatter notes across Notion, Docs, screenshots, and bookmarks. Studying becomes archaeology. Neural Navigator builds a connected knowledge graph that understands natural questions, even when the exact keyword is forgotten.',
       architecture: ['React + Vite frontend', 'Node.js / Express API', 'MongoDB + Redis cache', 'OpenAI embeddings', 'Vector semantic search'],
       challenges: [
@@ -529,6 +539,10 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `).join('');
 
+    const githubBtn = data.github ? `<a href="${data.github}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View on GitHub →</a>` : '';
+    const demoBtn = data.demo ? `<a href="${data.demo}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Live Demo →</a>` : '';
+    const noLinks = (!data.github && !data.demo) ? `<p class="skill-note" style="margin:0;">No public link yet — still in development.</p>` : '';
+
     modalBody.innerHTML = `
       <div class="modal-header">
         <div class="modal-title-wrap">
@@ -556,8 +570,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p>${data.result}</p>
         </div>
         <div class="modal-actions">
-          <a href="${data.github}" target="_blank" class="btn btn-primary">View on GitHub →</a>
-          <a href="${data.demo}" class="btn btn-secondary">Live Demo →</a>
+          ${githubBtn}${demoBtn}${noLinks}
         </div>
       </div>
     `;
@@ -628,7 +641,7 @@ document.addEventListener('DOMContentLoaded', () => {
           formStatus.className = 'form-status success';
           contactForm.reset();
         } else {
-          throw new Error(result.message);
+          throw new Error(result.message || 'Submission failed');
         }
       } catch {
         formStatus.textContent = 'Something went wrong. You can still email me directly.';
