@@ -2,22 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chahatesh — 13-Year-Old AI, Robotics & Software Engineer</title>
   <meta name="description" content="Portfolio of Chahatesh, a 13-year-old student engineer building AI assistants, robotics, and software that solve real-world problems." />
   <meta name="keywords" content="Chahatesh, AI, robotics, software engineer, VEX IQ, Connecticut coding challenge, StudyPath, Stardance" />
   <meta name="author" content="Chahatesh" />
+  <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0b0c10" />
+  <link rel="canonical" href="https://chahatesh.com/" />
 
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Chahatesh" />
   <meta property="og:title" content="Chahatesh — 13-Year-Old AI, Robotics & Software Engineer" />
   <meta property="og:description" content="Building AI, robotics, and software that solve real-world problems." />
+  <meta property="og:image" content="https://chahatesh.com/preview.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://chahatesh.com/" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chahatesh — 13-Year-Old AI, Robotics & Software Engineer" />
+  <meta name="twitter:description" content="Building AI, robotics, and software that solve real-world problems." />
+  <meta name="twitter:image" content="https://chahatesh.com/preview.jpg" />
+
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%2345a29e' stroke-width='8'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='%23f6f6f8' font-family='Arial'%3EC%3C/text%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Chahatesh",
+    "url": "https://chahatesh.com/",
+    "image": "https://chahatesh.com/preview.jpg",
+    "jobTitle": "Student Engineer — AI, Robotics & Software",
+    "description": "13-year-old AI, robotics, and software engineer building Atlas AI, StudyPath, and competition robotics.",
+    "sameAs": [
+      "https://github.com/chahatesh",
+      "https://www.youtube.com/@CKInnovates"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Chahatesh",
+    "url": "https://chahatesh.com/"
+  }
+  </script>
 </head>
 <body>
 
@@ -156,7 +194,7 @@
         <p>Built this from scratch with CAD, 3D-printed parts, and servo motors. First iteration burned out three MG995 servos because I didn't account for torque distribution. Redesigned the gearbox, added reinforced mounts, and now it picks up objects without self-destructing.</p>
         <div class="card-actions">
           <button class="btn btn-primary" data-open-modal="arm">See the design →</button>
-          <a href="https://www.printables.com/model/1784586-mg955-servo-robot-arm" target="_blank" class="btn btn-secondary">Printables →</a>
+          <a href="https://www.printables.com/model/1784586-mg955-servo-robot-arm" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Printables →</a>
         </div>
       </article>
 
@@ -167,7 +205,7 @@
         <p>Made this because I was frustrated taking the same generic quizzes over and over. Built an adaptive learning system that adjusts question difficulty in real time. Scaled to 1,000+ students with 98% server uptime before I graduated from that school.</p>
         <div class="card-actions">
           <button class="btn btn-primary" data-open-modal="studypath">Read the case study →</button>
-          <a href="https://github.com/chahatesh/StudyPath" target="_blank" class="btn btn-secondary">GitHub →</a>
+          <a href="https://github.com/chahatesh/StudyPath" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub →</a>
         </div>
       </article>
     </div>
@@ -187,6 +225,7 @@
           <img src="https://cdn.hackclub.com/019fccf8-7bec-7f63-b0cd-d416628d934e/Screenshot%202026-08-04%20093047.png" alt="Understand" loading="lazy" decoding="async" />
           <h4>Understand</h4>
           <p>Context-aware AI for your desktop screen.</p>
+          <button class="btn btn-secondary" data-open-modal="understand" style="margin-top:0.8rem;">Details →</button>
         </article>
 
         <article class="glass tilt carousel-card">
@@ -223,6 +262,7 @@
           <img src="https://cdn.hackclub.com/019fcd23-e546-7a10-acba-7bcf304efaa9/Screenshot%202026-08-04%20101801.png" alt="Neural Navigator" loading="lazy" decoding="async" />
           <h4>Neural Navigator</h4>
           <p>Award-winning AI navigation and knowledge app.</p>
+          <button class="btn btn-secondary" data-open-modal="neural" style="margin-top:0.8rem;">Details →</button>
         </article>
 
         <article class="glass tilt carousel-card">
@@ -546,8 +586,8 @@
     </form>
 
     <div class="contact-links">
-      <a href="https://github.com" target="_blank" class="btn btn-primary">GitHub</a>
-      <a href="https://youtube.com" target="_blank" class="btn btn-primary">YouTube</a>
+      <a href="https://github.com/chahatesh" target="_blank" rel="noopener noreferrer" class="btn btn-primary">GitHub</a>
+      <a href="https://www.youtube.com/@CKInnovates" target="_blank" rel="noopener noreferrer" class="btn btn-primary">YouTube</a>
     </div>
   </section>
 
