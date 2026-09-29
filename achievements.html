@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#191815" />
+  <title>Achievements — Chahatesh</title>
+  <meta name="description" content="Chahatesh Killada's achievements in software, robotics, and community work." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="achievement-page">
+  <nav>
+    <div class="wrap">
+      <a href="index.html#home" class="logo">Chahatesh</a>
+      <ul class="nav-links">
+        <li><a href="index.html#home">home</a></li>
+        <li><a href="projects.html">projects</a></li>
+        <li><a href="achievements.html" class="active">achievements</a></li>
+        <li><a href="index.html#contact">contact</a></li>
+      </ul>
+      <a href="projects.html" class="nav-archive">projects →</a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">menu</button>
+    </div>
+    <div class="mobile-nav">
+      <a href="index.html#home">home</a>
+      <a href="projects.html">projects</a>
+      <a href="achievements.html">achievements</a>
+      <a href="index.html#contact">contact</a>
+    </div>
+  </nav>
+
+  <header class="achievement-hero">
+    <div class="wrap">
+      <p class="hero-label">2024—2026</p>
+      <h1>A few<br /><em>milestones.</em></h1>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="section-split achievement-section">
+      <div class="section-header achievement-section-header">
+        <div>
+          <h2>What I am proud of</h2>
+        </div>
+      </div>
+
+      <div class="achievement-grid">
+        <article class="achievement-card">
+          <div class="achievement-media photo">
+            <img src="certs/ct-codeing.png" alt="Connecticut Computing Challenge certificate" />
+            
+          </div>
+          <div class="achievement-card-body">
+            <div class="achievement-card-meta"><span>May 2026 · Neural Navigator · with Madanmohan Aravind</span></div>
+            <h2>CT Computing Challenge</h2>
+          </div>
+        </article>
+
+        <article class="achievement-card">
+          <div class="achievement-media">
+            <img src="certs/stardance.jpg" alt="Stardance Certificate of Recognition" />
+            
+          </div>
+          <div class="achievement-card-body">
+            <div class="achievement-card-meta"><span>2024—25</span></div>
+            <h2>Stardance Ambassador</h2>
+          </div>
+        </article>
+
+        <article class="achievement-card">
+          <div class="achievement-media image-missing no-photo" aria-label="No VEX team photo posted">
+            <div class="achievement-missing-copy"><strong>No VEX team photo posted</strong></div>
+          </div>
+          <div class="achievement-card-body">
+            <div class="achievement-card-meta"><span>2025—26 · two state trips</span></div>
+            <h2>VEX IQ State Qualifier</h2>
+            <div class="achievement-card-footer"><a href="https://events.vex.com/teams/VIQRC/23761A" target="_blank" rel="noopener" class="text-link">Team page →</a></div>
+          </div>
+        </article>
+
+        <article class="achievement-card">
+          <div class="achievement-media image-missing no-photo" aria-label="No school team photo posted">
+            <div class="achievement-missing-copy"><strong>No team photo posted</strong></div>
+          </div>
+          <div class="achievement-card-body">
+            <div class="achievement-card-meta"><span>3 years running</span></div>
+            <h2>School robotics team</h2>
+            <div class="achievement-card-footer"><a href="https://www.youtube.com/@CKInnovates" target="_blank" rel="noopener" class="text-link">Build logs →</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-split achievement-links-section">
+      <div class="section-header"><h2>More</h2></div>
+      <div class="achievement-cta"><div><a class="btn btn-primary" href="projects.html">See my projects</a><a class="btn btn-secondary" href="https://github.com/chahatesh" target="_blank" rel="noopener">View my code</a></div></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p><a href="index.html" class="text-link">← Back home</a></p>
+      <p>© <span id="year"></span> Chahatesh. Designed and built by me.</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.mobile-nav');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.textContent = open ? 'close' : 'menu';
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    document.querySelectorAll('.mobile-nav a').forEach(link => link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      toggle.textContent = 'menu';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+    }));
+  </script>
+</body>
+</html>
