@@ -2,606 +2,228 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chahatesh — 13-Year-Old AI, Robotics & Software Engineer</title>
-  <meta name="description" content="Portfolio of Chahatesh, a 13-year-old student engineer building AI assistants, robotics, and software that solve real-world problems." />
-  <meta name="keywords" content="Chahatesh, AI, robotics, software engineer, VEX IQ, Connecticut coding challenge, StudyPath, Stardance" />
-  <meta name="author" content="Chahatesh" />
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0b0c10" />
-  <link rel="canonical" href="https://chahatesh.com/" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Chahatesh" />
-  <meta property="og:title" content="Chahatesh — 13-Year-Old AI, Robotics & Software Engineer" />
-  <meta property="og:description" content="Building AI, robotics, and software that solve real-world problems." />
-  <meta property="og:image" content="https://chahatesh.com/preview.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:url" content="https://chahatesh.com/" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Chahatesh — 13-Year-Old AI, Robotics & Software Engineer" />
-  <meta name="twitter:description" content="Building AI, robotics, and software that solve real-world problems." />
-  <meta name="twitter:image" content="https://chahatesh.com/preview.jpg" />
-
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%2345a29e' stroke-width='8'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='%23f6f6f8' font-family='Arial'%3EC%3C/text%3E%3C/svg%3E" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#191815" />
+  <title>Chahatesh — Software, Robotics &amp; AI</title>
+  <meta name="description" content="Chahatesh Killada builds software, robots, and practical AI tools." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Chahatesh",
-    "url": "https://chahatesh.com/",
-    "image": "https://chahatesh.com/preview.jpg",
-    "jobTitle": "Student Engineer — AI, Robotics & Software",
-    "description": "13-year-old AI, robotics, and software engineer building Atlas AI, StudyPath, and competition robotics.",
-    "sameAs": [
-      "https://github.com/chahatesh",
-      "https://www.youtube.com/@CKInnovates"
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Chahatesh",
-    "url": "https://chahatesh.com/"
-  }
-  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YGKZSH2G33"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-YGKZSH2G33');</script>
 </head>
+
 <body>
 
-  <div class="page-loader">
-    <div class="loader-text">Chahatesh.</div>
-    <div class="loader-bar"><div class="loader-progress"></div></div>
-  </div>
-
-  <div class="background"></div>
-  <div class="grid-lines"></div>
-  <div class="blobs">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-  </div>
-  <div id="particles"></div>
-  <div id="spotlight"></div>
-  <div id="progress-bar"></div>
-
   <nav>
-    <div class="nav-inner">
-      <a href="#home" class="logo">Chahatesh.</a>
+    <div class="wrap">
+      <a href="#home" class="logo">Chahatesh</a>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#journey">Journey</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home">home</a></li>
+        <li><a href="#videos">videos</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#achievements">achievements</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#contact">contact</a></li>
       </ul>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">☀️</button>
-      <button class="hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="achievements.html" class="nav-archive">achievements →</a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">menu</button>
+    </div>
+    <div class="mobile-nav">
+      <a href="#home">home</a>
+      <a href="#videos">videos</a>
+      <a href="#projects">projects</a>
+      <a href="#achievements">achievements</a>
+      <a href="#about">about</a>
+      <a href="#contact">contact</a>
     </div>
   </nav>
 
-  <div class="mobile-nav">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#achievements">Achievements</a>
-    <a href="#journey">Journey</a>
-    <a href="#contact">Contact</a>
-  </div>
-
   <header id="home" class="hero">
-    <span class="hero-pretitle">Welcome to my workspace</span>
-    <h1 class="kinetic-line hero-greeting">Hello</h1>
-    <h1 class="kinetic-line hero-name">I'm Chahatesh</h1>
-    <p class="type-line">Building intelligent robotics and AI at 13</p>
-    <p class="sub">I'm a student engineer building AI, robotics, and software that solves real-world problems. I care about systems that are fast, accessible, and actually useful.</p>
-    <div class="hero-btns">
-      <a href="#projects" class="btn btn-primary">Explore Projects</a>
-      <a href="#contact" class="btn btn-secondary">Let's Talk</a>
+    <div class="wrap">
+    <div class="hero-main">
+      <h1 class="hero-title">Chahatesh<span class="hero-dot">.</span></h1>
+      <p class="hero-sub">I build software, robots, and AI tools.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View my work</a>
+      </div>
+    </div>
+    <p class="hero-facts-line"><span class="fact">13 years old</span><span class="fact">14+ projects built</span><span class="fact">2× state trips</span><span class="fact">1k+ StudyPath users</span></p>
     </div>
   </header>
 
-  <section id="about" class="about-section">
-    <div class="section-title">
-      <div>
-        <h2>My Journey</h2>
-        <p>How I went from breaking things to building them.</p>
-      </div>
-    </div>
+  <main class="wrap">
 
-    <div class="about-layout reveal">
-      <div class="glass about-card">
-        <p class="lead">
-          I was the kid who took apart every remote and circuit board I could find, never putting them back together properly. Now I actually know how to put things back together. Sometimes better than they were before.
-        </p>
-        <p>
-          I started coding at 8 with Python tutorials and spent weeks crashing programs I thought were bulletproof. I built my first robot for VEX IQ and watched it lose spectacularly in the first competition (burned out a motor on the drive train). But I came back, redesigned the drivetrain, and eventually qualified for state. Twice.
-        </p>
-        <p>
-          These days I'm building <strong>AI assistants, robotics systems, and software platforms</strong> that actually solve problems I run into day-to-day. I'm a <strong>Stardance Ambassador</strong> and mentor other students, mostly because I remember how frustrating it was to Google "why won't my code compile" at midnight. I also spent way too long debugging a servo calibration issue that turned out to be a single misplaced decimal point.
-        </p>
-        <p>
-          Right now I'm obsessed with making the <strong>Atlas AI</strong> assistant smarter and figuring out how to integrate it with real robotics hardware—which is harder than it sounds.
-        </p>
+    <section id="videos" class="section-split">
+      <div class="section-header">
+        <h2>Videos</h2>
+        <a href="https://www.youtube.com/@CKInnovates" target="_blank" rel="noopener" class="text-link">my channel →</a>
       </div>
-      <div class="about-highlights">
-        <div class="glass about-stat">
-          <span class="about-stat-num">13</span>
-          <span class="about-stat-label">years old</span>
+
+      <div class="video-grid">
+        <article class="video-card featured">
+          <a class="video-thumb" href="https://www.youtube.com/shorts/6RY44eswr0Y" target="_blank" rel="noopener" aria-label="Watch the robot build on YouTube">
+            <img src="https://i.ytimg.com/vi/6RY44eswr0Y/hqdefault.jpg" alt="Thumbnail for How did I build a robot out of this" loading="lazy" />
+            <span class="video-play" aria-hidden="true"></span>
+          </a>
+          <div class="video-card-body">
+            <h3>How did I build a robot out of this?</h3>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <a class="video-thumb" href="https://www.youtube.com/watch?v=cSldQJsDNWY" target="_blank" rel="noopener" aria-label="Watch I Let My AI Plan Every Minute of My Week on YouTube">
+            <img src="https://i.ytimg.com/vi/cSldQJsDNWY/hqdefault.jpg" alt="Thumbnail for I Let My AI Plan Every Minute of My Week" loading="lazy" />
+            <span class="video-play" aria-hidden="true"></span>
+          </a>
+          <div class="video-card-body">
+            <h3>I Let My AI Plan Every Minute of My Week</h3>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section-split">
+      <div class="section-header">
+        <h2>Stuff I made</h2>
+        <a href="projects.html" class="view-all">See everything →</a>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card project-xl" data-cat="ai">
+          <img src="https://user-cdn.hackclub-assets.com/019fccdf-1afe-7972-9eec-9ec147c3f0c9/Screenshot%202026-08-04%20085839.png" alt="Atlas AI" loading="lazy" />
+          <h3>Atlas AI</h3>
+          <button class="text-link" data-open-modal="atlas">Read case study →</button>
+        </article>
+
+        <article class="project-card project-tall" data-cat="education">
+          <img src="https://cdn.hackclub.com/019fccf2-eef1-7a34-8722-6ff4cdaae387/Screenshot%202026-08-04%20092439.png" alt="StudyPath app screenshot" loading="lazy" />
+          <h3>StudyPath</h3>
+          <a href="https://github.com/chahatesh/StudyPath" target="_blank" rel="noopener" class="text-link">GitHub →</a>
+        </article>
+
+        <article class="project-card project-wide" data-cat="robotics">
+          <img src="https://cdn.hackclub.com/019fccf0-1264-7f60-b32c-f24f5a67ba58/IMG_9954%20(1).png" alt="Photo of the 3D-printed robotic arm" loading="lazy" />
+          <h3>4-DOF Robotic Arm</h3>
+          <a href="https://www.printables.com/model/1784586-mg955-servo-robot-arm" target="_blank" rel="noopener" class="text-link">Files →</a>
+        </article>
+
+        <article class="project-card" data-cat="ai">
+          <img src="https://cdn.hackclub.com/019fccf8-7bec-7f63-b0cd-d416628d934e/Screenshot%202026-08-04%20093047.png" alt="Understand app screenshot" loading="lazy" />
+          <h3>Understand</h3>
+          <a href="https://github.com/chahatesh/Understand" target="_blank" rel="noopener" class="text-link">GitHub →</a>
+        </article>
+
+        <article class="project-card" data-cat="ai">
+          <img src="https://user-cdn.hackclub-assets.com/019fcd23-e546-7a10-acba-7bcf304efaa9/Screenshot%202026-08-04%20101801.png" alt="Neural Navigator" loading="lazy" />
+          <h3>Neural Navigator</h3>
+          <a href="https://github.com/chahatesh/Neural-Navigator" target="_blank" rel="noopener" class="text-link">GitHub →</a>
+        </article>
+
+        <article class="project-card project-wide" data-cat="robotics">
+          <div class="project-image-missing" role="img" aria-label="VEX IQ Robotics Competition"><strong>VEX IQ</strong></div>
+          <h3>VEX IQ Robotics</h3>
+          <a href="https://events.vex.com/teams/VIQRC/23761A" target="_blank" rel="noopener" class="text-link">Team page →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="achievements" class="section-split">
+      <div class="section-header"><h2>Work I am proud of</h2><a href="achievements.html" class="view-all">See all of it →</a></div>
+      <div class="achieve-layout">
+        <div class="achieve-list">
+          <article class="achieve-item"><img src="certs/ct-codeing.png" alt="Connecticut Computing Challenge certificate" loading="lazy" /><div><span class="achieve-year">2026 · with Madanmohan Aravind</span><h3>CT Computing Challenge</h3></div></article>
+          <article class="achieve-item"><img src="certs/stardance.jpg" alt="Stardance Certificate of Recognition for Chahatesh" loading="lazy" /><div><span class="achieve-year">2024–25</span><h3>Stardance Ambassador</h3></div></article>
+          <article class="achieve-item"><div class="achieve-image-missing" aria-label="No VEX team photo posted"><strong>No team photo</strong></div><div><span class="achieve-year">2025–26</span><h3>VEX IQ State Championship Qualifier</h3></div></article>
+          <article class="achieve-item"><div class="achieve-image-missing" aria-label="No school team photo posted"><strong>No team photo</strong></div><div><span class="achieve-year">3 years running</span><h3>School robotics team</h3></div></article>
         </div>
-        <div class="glass about-stat">
-          <span class="about-stat-num">15+</span>
-          <span class="about-stat-label">projects built</span>
-        </div>
-        <div class="glass about-stat">
-          <span class="about-stat-num">2x</span>
-          <span class="about-stat-label">state qualifier</span>
+        <div class="certificates">
+          <h3 class="cert-title">A few numbers</h3>
+          <ul class="numbers-list"><li><strong>Top 10</strong><span>2026 CT coding challenge</span></li><li><strong>2×</strong><span>VEX IQ state trips</span></li><li><strong>6 / 11</strong><span>Stardance awards</span></li></ul>
+          <div class="cert-grid"><a href="https://stardance.hackclub.com/projects/19485" target="_blank" rel="noopener" class="cert-card"><img src="https://stardance.hackclub.com/projects/19485/og_image" alt="Self-balancing robot project cover" loading="lazy" /><span>Self-balancing robot build</span></a></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="value-prop">
-    <div class="glass value-card reveal">
-      I turn <span>messy problems</span> into fast, usable systems — from AI assistants to competition robots.
-    </div>
-  </section>
+    <section id="about" class="section-split">
+      <div class="section-header"><h2>About me</h2></div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="lead">I was the kid who took the remote apart.</p>
+        </div>
 
-  <section id="projects">
-    <div class="section-title">
-      <div>
-        <h2>Things I've Built</h2>
-        <p>Some victories, a few debugging marathons, and lessons learned the hard way.</p>
-      </div>
-      <a href="projects.html" class="view-all">See everything →</a>
-    </div>
-
-    <div class="featured-grid">
-      <article class="glass tilt project-card project-hero reveal">
-        <div class="project-hero-content">
-          <img src="https://cdn.hackclub.com/019fccdf-1afe-7972-9eec-9ec147c3f0c9/Screenshot%202026-08-04%20085839.png" alt="Atlas AI preview" class="thumb" loading="lazy" decoding="async" />
-          <div class="hero-text">
-            <span class="project-status">Current Obsession</span>
-            <h3>Atlas AI</h3>
-            <p class="project-description">An AI assistant I'm building with memory, vision, voice, and eventually robotics integration. Started as a weekend experiment with groq's API, now its a real project. The hard part isn't the model—it's connecting all the pieces together without it falling apart.</p>
-            <p class="project-meta">Struggling with: Stable context window management when running 10+ tool calls in sequence.</p>
-            <div class="card-actions">
-              <button class="btn btn-primary" data-open-modal="atlas">Deep dive →</button>
-            </div>
+        <div class="about-side">
+          <div class="awards-mini">
+            <h4>Awards</h4>
+            <ul>
+              <li>CT Lt. Governor’s Computing Challenge Finalist</li>
+              <li>Stardance Certificate of Recognition</li>
+              <li>2× VEX IQ State Championship Qualifier</li>
+              <li>VEX IQ Judge’s Award</li>
+              <li>VEX IQ Teamwork Award</li>
+              <li>VEX IQ Skills Challenge — 3rd Place</li>
+            </ul>
           </div>
         </div>
-      </article>
+      </div>
+    </section>
 
-      <article class="glass tilt project-card reveal">
-        <img src="https://cdn.hackclub.com/019fccf0-1264-7f60-b32c-f24f5a67ba58/IMG_9954%20(1).png" alt="Robotic Arm preview" class="thumb" loading="lazy" decoding="async" />
-        <span class="project-status">Complete</span>
-        <h3>4-DOF Robotic Arm</h3>
-        <p>Built this from scratch with CAD, 3D-printed parts, and servo motors. First iteration burned out three MG995 servos because I didn't account for torque distribution. Redesigned the gearbox, added reinforced mounts, and now it picks up objects without self-destructing.</p>
-        <div class="card-actions">
-          <button class="btn btn-primary" data-open-modal="arm">See the design →</button>
-          <a href="https://www.printables.com/model/1784586-mg955-servo-robot-arm" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Printables →</a>
+    <section id="journey" class="section-split">
+      <div class="section-header">
+        <h2>How it started</h2>
+      </div>
+
+      <ol class="timeline">
+        <li><span class="timeline-marker">01</span><div><span class="timeline-year">2016</span><h3>Make something move</h3></div></li>
+        <li><span class="timeline-marker">02</span><div><span class="timeline-year">2020</span><h3>Learn how robots work</h3></div></li>
+        <li><span class="timeline-marker">03</span><div><span class="timeline-year">2025</span><h3>Compete, rebuild, qualify</h3></div></li>
+        <li><span class="timeline-marker">04</span><div><span class="timeline-year">2026</span><h3>Make AI work with hardware</h3></div></li>
+      </ol>
+    </section>
+
+    <section id="contact" class="section-split">      <div class="section-header">
+        <h2>Get in touch</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="lead">Email me.</p>
+          <div class="contact-links">
+            <a href="mailto:chahatesh.killada@gmail.com" class="contact-line">chahatesh.killada@gmail.com</a>
+            <a href="https://www.youtube.com/@CKInnovates" target="_blank" rel="noopener" class="contact-line">youtube.com/@CKInnovates</a>
+            <a href="https://www.instagram.com/ck_innovates/" target="_blank" rel="noopener" class="contact-line">instagram.com/ck_innovates</a>
+            <a href="https://github.com/chahatesh" target="_blank" rel="noopener" class="contact-line">github.com/chahatesh</a>
+          </div>
         </div>
-      </article>
 
-      <article class="glass tilt project-card reveal">
-        <img src="https://cdn.hackclub.com/019fccf2-eef1-7a34-8722-6ff4cdaae387/Screenshot%202026-08-04%20092439.png" alt="StudyPath preview" class="thumb" loading="lazy" decoding="async" />
-        <span class="project-status">1,000+ Users</span>
-        <h3>StudyPath</h3>
-        <p>Made this because I was frustrated taking the same generic quizzes over and over. Built an adaptive learning system that adjusts question difficulty in real time. Scaled to 1,000+ students with 98% server uptime before I graduated from that school.</p>
-        <div class="card-actions">
-          <button class="btn btn-primary" data-open-modal="studypath">Read the case study →</button>
-          <a href="https://github.com/chahatesh/StudyPath" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub →</a>
-        </div>
-      </article>
-    </div>
-  </section>
+        <form class="contact-form" id="contact-form" novalidate>
+          <input type="hidden" name="access_key" value="5ab9dba0-218a-4104-ba64-5a668e0baead" />
+          <input type="hidden" name="subject" value="New message from chahatesh.com" />
 
-  <section id="other-projects">
-    <div class="section-title">
-      <div>
-        <h2>Experiments & Side Builds</h2>
-        <p>Weekend projects, weird ideas, and things I shipped just to see if they'd work.</p>
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Name" required autocomplete="name" />
+            <input type="email" name="email" placeholder="Email" required autocomplete="email" aria-label="Email" />
+          </div>
+          <input type="text" name="subject_user" placeholder="Subject" aria-label="Subject" />
+          <textarea name="message" placeholder="What are you building?" required rows="5" aria-label="Your message"></textarea>              <button type="submit" class="btn btn-primary" id="submit-btn">Send message</button>
+              <div class="form-status" role="status" aria-live="polite" id="form-status"></div>
+        </form>
       </div>
-    </div>
+    </section>
 
-    <div class="carousel-wrap reveal">
-      <div class="carousel">
-        <article class="glass tilt carousel-card">
-          <img src="https://cdn.hackclub.com/019fccf8-7bec-7f63-b0cd-d416628d934e/Screenshot%202026-08-04%20093047.png" alt="Understand" loading="lazy" decoding="async" />
-          <h4>Understand</h4>
-          <p>Context-aware AI for your desktop screen.</p>
-          <button class="btn btn-secondary" data-open-modal="understand" style="margin-top:0.8rem;">Details →</button>
-        </article>
-
-        <article class="glass tilt carousel-card">
-          <img src="https://cdn.hackclub.com/019fccfa-dd92-7ba2-9d65-190e979e4052/Screenshot%202026-07-30%20115514.png" alt="Versatile XY Gantry" loading="lazy" decoding="async" />
-          <h4>Versatile XY Gantry</h4>
-          <p>Modular motion platform for automation and CNC.</p>
-        </article>
-
-        <article class="glass tilt carousel-card">
-          <img src="https://cdn.hackclub.com/019fccfe-2aba-7f17-b846-abc93675fc06/Screenshot%202026-08-04%20093704.png" alt="WebOS" loading="lazy" decoding="async" />
-          <h4>WebOS</h4>
-          <p>Browser-based desktop OS with custom apps.</p>
-        </article>
-
-        <article class="glass tilt carousel-card">
-          <img src="https://cdn.hackclub.com/019fccff-734f-797d-ad9b-5d4965f22dda/Screenshot%202026-08-04%20093826.png" alt="SmartSchedule AI" loading="lazy" decoding="async" />
-          <h4>SmartSchedule AI</h4>
-          <p>ESP32 smart planner with AI, OLED, and voice.</p>
-        </article>
-
-        <article class="glass tilt carousel-card">
-          <img src="https://cdn.hackclub.com/019fcd04-46d5-7608-8103-5c235707e21b/IMG_9674.png" alt="Self-Balancing Robot" loading="lazy" decoding="async" />
-          <h4>Self-Balancing Robot</h4>
-          <p>Two-wheel balance with PID and IMU sensors.</p>
-        </article>
-
-        <article class="glass tilt carousel-card">
-          <img src="https://placehold.co/600x360/141416/FFFFFF.webp?text=ESP32+Robot+Car" alt="ESP32 Robot Car" loading="lazy" decoding="async" />
-          <h4>ESP32 Robot Car</h4>
-          <p>Wi-Fi controlled robot with motor control.</p>
-        </article>
-
-        <article class="glass tilt carousel-card">
-          <img src="https://cdn.hackclub.com/019fcd23-e546-7a10-acba-7bcf304efaa9/Screenshot%202026-08-04%20101801.png" alt="Neural Navigator" loading="lazy" decoding="async" />
-          <h4>Neural Navigator</h4>
-          <p>Award-winning AI navigation and knowledge app.</p>
-          <button class="btn btn-secondary" data-open-modal="neural" style="margin-top:0.8rem;">Details →</button>
-        </article>
-
-        <article class="glass tilt carousel-card">
-          <img src="https://cdn.hackclub.com/019fcd26-2803-78ce-a613-62f09a019223/14.png" alt="Stackable Battery Holder" loading="lazy" decoding="async" />
-          <h4>Stackable Battery Holder</h4>
-          <p>Modular, 3D-printed battery storage system.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="section-title">
-      <div>
-        <h2>What I Code With</h2>
-        <p>Languages, tools, and frameworks that actually made it into production.</p>
-      </div>
-    </div>
-
-    <div class="skills-grid">
-      <article class="glass skill-card reveal">
-        <h3>Languages</h3>
-        <div class="skill-pills">
-          <span>Python</span><span>C++</span><span>JavaScript</span><span>HTML/CSS</span><span>Arduino</span>
-        </div>
-        <p class="skill-note">Python got me started, C++ keeps me honest about memory management.</p>
-      </article>
-      <article class="glass skill-card reveal skill-wide">
-        <h3>Robotics & Hardware</h3>
-        <div class="skill-pills">
-          <span>Kinematics</span><span>PID Controllers</span><span>Embedded Systems</span><span>Servo Control</span><span>Arduino Mega</span><span>Sensor Integration</span><span>Motor Drivers</span><span>3D Printing</span>
-        </div>
-      </article>
-      <article class="glass skill-card reveal">
-        <h3>CAD & Design</h3>
-        <div class="skill-pills">
-          <span>Onshape</span><span>FDM Printing</span><span>Mechanical Design</span><span>Figma</span>
-        </div>
-        <p class="skill-note">First Onshape model took 6 hours. Now I can sketch a part in 20 minutes.</p>
-      </article>
-      <article class="glass skill-card reveal skill-wide">
-        <h3>AI & Machine Learning</h3>
-        <div class="skill-pills">
-          <span>LLM APIs</span><span>Prompt Engineering</span><span>Agentic Systems</span><span>Computer Vision</span><span>Tool Calling</span><span>Context Management</span><span>Fine-Tuning</span>
-        </div>
-        <p class="skill-note">Spent 20 hours debugging context window overflow. Turns out I was appending instead of replacing. </p>
-      </article>
-      <article class="glass skill-card reveal">
-        <h3>Software Stack</h3>
-        <div class="skill-pills">
-          <span>Electron</span><span>Firebase</span><span>Node.js</span><span>Git</span><span>REST APIs</span>
-        </div>
-      </article>
-      <article class="glass skill-card reveal">
-        <h3>Tools I Live In</h3>
-        <div class="skill-pills">
-          <span>VS Code</span><span>Chrome DevTools</span><span>CLI</span><span>GitHub</span><span>Figma</span>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section id="achievements">
-    <div class="section-title">
-      <div>
-        <h2>Recognition & Milestones</h2>
-        <p>Competitions I competed in, awards that surprised me, and communities I represent.</p>
-      </div>
-    </div>
-
-    <div class="achievements-grid">
-      <article class="glass tilt achievement-card reveal">
-        <span class="achievement-year">2025</span>
-        <h3>CT Lieutenant Governor's Computing Challenge</h3>
-        <p>Finalist. Top 10 out of 1,000+ statewide. Built something unusual enough that the judges asked how I thought of it.</p>
-      </article>
-
-      <article class="glass tilt achievement-card reveal">
-        <span class="achievement-year">2024-25</span>
-        <h3>Stardance Ambassador</h3>
-        <p>Mentor at one of the world's largest student maker networks. Helping others debug their projects because I remember how frustrating it was to be stuck.</p>
-      </article>
-
-      <article class="glass tilt achievement-card reveal">
-        <h3>Stardance Certificate of Recognition</h3>
-        <p>Officially recognized by a program supported by NASA, AMD, Microsoft, GitHub, and Hack Club for creativity and technical innovation.</p>
-      </article>
-
-      <article class="glass tilt achievement-card reveal">
-        <h3>VEX IQ State Championship Qualifier</h3>
-        <p>Qualified for the State Championship twice — building robot design, autonomous routines, and lift systems under competition pressure.</p>
-      </article>
-
-      <article class="glass tilt achievement-card reveal">
-        <h3>School Robotics Team — 3 Consecutive Years</h3>
-        <p>Selected for my school's robotics team every year I tried out (3/3), demonstrating consistent technical ability, teamwork, and dedication.</p>
-      </article>
-
-      <article class="glass tilt achievement-card reveal">
-        <h3>Recruited by Multiple FTC Teams</h3>
-        <p>Multiple FIRST Tech Challenge teams invited me to join based on robotics experience, CAD skills, and engineering project work.</p>
-      </article>
-    </div>
-
-    <div class="awards-section reveal">
-      <h3 class="awards-title">Awards</h3>
-      <ul class="awards-list">
-        <li>Connecticut Lieutenant Governor's Computing Challenge Finalist <span>(Top 10 / 1,000+)</span></li>
-        <li>Stardance Certificate of Recognition</li>
-        <li>2x VEX IQ State Championship Qualifier</li>
-        <li>VEX IQ Judge's Award</li>
-        <li>VEX IQ Teamwork Award</li>
-        <li>VEX IQ Second Place Award</li>
-        <li>VEX IQ Skills Challenge – Third Place</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="leadership">
-    <div class="section-title">
-      <div>
-        <h2>Leadership & Community</h2>
-        <p>Sharing what I learn and helping others grow as builders.</p>
-      </div>
-    </div>
-
-    <div class="leadership-grid">
-      <article class="glass leadership-card reveal">
-        <h3>Stardance Ambassador</h3>
-        <p>Represent the Stardance community by encouraging students worldwide to participate in engineering and maker projects.</p>
-      </article>
-
-      <article class="glass leadership-card reveal">
-        <h3>Local STEM Mentor</h3>
-        <p>Regularly help students with robotics, programming, CAD, electronics, engineering design, troubleshooting, and learning new technologies.</p>
-      </article>
-
-      <article class="glass leadership-card reveal">
-        <h3>Robotics Instructor</h3>
-        <p>Organized and taught robotics workshops, introducing younger students to programming, electronics, engineering, and robotics through hands-on learning.</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="testimonials">
-    <div class="section-title">
-      <div>
-        <h2>What People Say</h2>
-        <p>Feedback from mentors, teachers, and teammates.</p>
-      </div>
-    </div>
-
-    <div class="testimonials-grid">
-      <article class="glass testimonial-card reveal">
-        <div class="quote-mark">“</div>
-        <p class="testimonial-text">Chahatesh built and marketed StudyPath to over a thousand students, all on his own.</p>
-        <p class="testimonial-author">Anonymous</p>
-        <p class="testimonial-role">Science Teacher</p>
-      </article>
-
-      <article class="glass testimonial-card reveal">
-        <div class="quote-mark">“</div>
-        <p class="testimonial-text">His VEX IQ robot worked perfectly! Really well executed hardware and software. He is an engineer in the making.</p>
-        <p class="testimonial-author">Eric Lord</p>
-        <p class="testimonial-role">Robotics Coach</p>
-      </article>
-
-      <article class="glass testimonial-card reveal">
-        <div class="quote-mark">“</div>
-        <p class="testimonial-text">Neural Navigator was one of the most polished projects in the competition. It looked great and solved a real problem.</p>
-        <p class="testimonial-author">Judge</p>
-        <p class="testimonial-role">Connecticut Coding Challenge</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="journey" class="timeline-section">
-    <div class="section-title">
-      <div>
-        <h2>My Story</h2>
-        <p>A timeline of how I grew from a curious beginner into a state-qualifying robotics engineer and AI builder.</p>
-      </div>
-    </div>
-
-    <div class="timeline">
-      <div class="timeline-track"></div>
-      <div class="timeline-progress"></div>
-
-      <div class="timeline-item left">
-        <div class="timeline-marker"></div>
-        <div class="timeline-card glass">
-          <div class="timeline-year">2016</div>
-          <div class="timeline-desc">I built my first ever hardware project, a simple circuit with a motor and a battery.</div>
-        </div>
-      </div>
-
-      <div class="timeline-item right">
-        <div class="timeline-marker"></div>
-        <div class="timeline-card glass">
-          <div class="timeline-year">2020</div>
-          <div class="timeline-desc">Began focusing seriously on robotics. I started learning how hardware, sensors, and logic come together to make a machine autonomous.</div>
-        </div>
-      </div>
-
-      <div class="timeline-item left">
-        <div class="timeline-marker"></div>
-        <div class="timeline-card glass">
-          <div class="timeline-year">2025</div>
-          <div class="timeline-desc">Qualified for the VEX IQ State Championship. That season taught me iterative design, and how to write reliable autonomous routines.</div>
-        </div>
-      </div>
-
-      <div class="timeline-item right">
-        <div class="timeline-marker"></div>
-        <div class="timeline-card glass">
-          <div class="timeline-year">2026</div>
-          <div class="timeline-desc">Qualified for the VEX IQ State Championship again and began pursuing robotics and AI much more intensively — combining code, competition, and creative problem solving.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-title">
-      <div>
-        <h2>Projects Preview</h2>
-        <p>Quick highlights across AI, education, and robotics. Drag to explore.</p>
-      </div>
-    </div>
-
-    <div class="carousel-wrap reveal">
-      <div class="carousel">
-        <article class="glass tilt carousel-card">
-          <img src="https://cdn.hackclub.com/019fccdf-1afe-7972-9eec-9ec147c3f0c9/Screenshot%202026-08-04%20085839.png" alt="Atlas AI" loading="lazy" decoding="async" />
-          <h4>Atlas AI</h4>
-          <p>Multimodal AI assistant with memory, vision, and tools.</p>
-        </article>
-
-        <article class="glass tilt carousel-card">
-          <img src="https://cdn.hackclub.com/019fccf0-1264-7f60-b32c-f24f5a67ba58/IMG_9954%20(1).png" alt="Robotic Arm" loading="lazy" decoding="async" />
-          <h4>Robotic Arm</h4>
-          <p>Custom 3D-printed arm with kinematics.</p>
-        </article>
-
-        <article class="glass tilt carousel-card">
-          <img src="https://cdn.hackclub.com/019fccf2-eef1-7a34-8722-6ff4cdaae387/Screenshot%202026-08-04%20092439.png" alt="StudyPath" loading="lazy" decoding="async" />
-          <h4>StudyPath</h4>
-          <p>Adaptive learning at scale for 1,000+ users.</p>
-        </article>
-
-        <article class="glass tilt carousel-card">
-          <img src="https://placehold.co/600x360/141416/FFFFFF.webp?text=VEX+IQ+Robot" alt="Robotics" loading="lazy" decoding="async" />
-          <h4>VEX IQ Robotics</h4>
-          <p>State-qualifying robot design and autonomous code.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-title">
-      <div>
-        <h2>By the Numbers</h2>
-        <p>Real metrics from projects that shipped and competitions that mattered.</p>
-      </div>
-    </div>
-
-    <div class="stats-grid">
-      <div class="glass stat-card reveal">
-        <div class="stat-number" data-target="15" data-suffix="+">0+</div>
-        <div class="stat-label">Engineering Projects</div>
-      </div>
-      <div class="glass stat-card reveal">
-        <div class="stat-number" data-target="8" data-suffix="+">0+</div>
-        <div class="stat-label">Robotics & Embedded Systems</div>
-      </div>
-      <div class="glass stat-card reveal">
-        <div class="stat-number" data-target="1000" data-suffix="+">0+</div>
-        <div class="stat-label">Students Used StudyPath</div>
-      </div>
-      <div class="glass stat-card reveal">
-        <div class="stat-number" data-target="2" data-suffix="">0</div>
-        <div class="stat-label">VEX IQ State Qualifications</div>
-      </div>
-      <div class="glass stat-card reveal">
-        <div class="stat-number" data-target="10" data-suffix="">0</div>
-        <div class="stat-label">Finalists in Connecticut Coding Challenge</div>
-      </div>
-      <div class="glass stat-card reveal">
-        <div class="stat-number" data-target="3" data-suffix="/3">0/3</div>
-        <div class="stat-label">Robotics Team Selections</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="mission" class="mission-section">
-    <div class="glass mission-card reveal">
-      <h2>Mission</h2>
-      <p>
-        I believe the best way to learn is by building. Every project I create is an opportunity to solve a real problem, explore new technologies, and inspire others to build alongside me. Whether it's AI, robotics, or mechanical engineering, my goal is to turn ambitious ideas into reality while sharing what I learn with the community.
-      </p>
-    </div>
-  </section>
-
-  <section id="contact" class="contact-section">
-    <h2>Let's build something.</h2>
-    <p>I'm open to collaborations, robotics teams, internships, and interesting problems worth solving.</p>
-
-    <form class="contact-form" id="contact-form">
-      <input type="hidden" name="access_key" value="5ab9dba0-218a-4104-ba64-5a668e0baead" />
-      <input type="hidden" name="subject" value="New message from portfolio" />
-
-      <div class="form-row">
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Your email" required />
-      </div>
-      <input type="text" name="subject_user" placeholder="Subject" />
-      <textarea name="message" placeholder="Tell me about your project, idea, or opportunity..." required></textarea>
-      <button type="submit" class="btn btn-primary">Send Message →</button>
-      <div class="form-status"></div>
-    </form>
-
-    <div class="contact-links">
-      <a href="https://github.com/chahatesh" target="_blank" rel="noopener noreferrer" class="btn btn-primary">GitHub</a>
-      <a href="https://www.youtube.com/@CKInnovates" target="_blank" rel="noopener noreferrer" class="btn btn-primary">YouTube</a>
-    </div>
-  </section>
+  </main>
 
   <footer>
-    © <span id="year"></span> Chahatesh. Built with code, curiosity, and late nights.
+    <div class="wrap">
+      <p>© <span id="year"></span> Chahatesh. Designed and built by me.</p>
+    </div>
   </footer>
 
-  <div class="modal-overlay" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="modal-content glass" id="modal-body"></div>
+  <div class="modal-overlay" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content" id="modal-body"></div>
   </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
   <script src="main.js"></script>
 </body>
 </html>
