@@ -2,117 +2,149 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#191815" />
   <title>Projects — Chahatesh</title>
-  <meta name="description" content="Browse all of Chahatesh's projects in AI, robotics, web development, and education technology — including Atlas AI, StudyPath, and VEX IQ robotics." />
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0b0c10" />
-  <link rel="canonical" href="https://chahatesh.com/projects.html" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Chahatesh" />
-  <meta property="og:title" content="Projects — Chahatesh" />
-  <meta property="og:description" content="Search and filter projects in AI, robotics, web, and education." />
-  <meta property="og:image" content="https://chahatesh.com/preview.jpg" />
-  <meta property="og:url" content="https://chahatesh.com/projects.html" />
-
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%2345a29e' stroke-width='8'/%3E%3Ctext x='50' y='68' font-size='50' text-anchor='middle' fill='%23f6f6f8' font-family='Arial'%3EC%3C/text%3E%3C/svg%3E" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="A collection of things Chahatesh has made, from robots to apps." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YGKZSH2G33"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://chahatesh.com/" },
-      { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://chahatesh.com/projects.html" }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Projects — Chahatesh",
-    "url": "https://chahatesh.com/projects.html",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Chahatesh",
-      "url": "https://chahatesh.com/"
-    }
-  }
-  </script>
+  gtag('config', 'G-YGKZSH2G33');
+</script>
 </head>
+
 <body>
 
-  <div class="page-loader">
-    <div class="loader-text">Chahatesh.</div>
-    <div class="loader-bar"><div class="loader-progress"></div></div>
-  </div>
-
-  <div class="background"></div>
-  <div class="grid-lines"></div>
-  <div class="blobs">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-  </div>
-  <div id="particles"></div>
-  <div id="spotlight"></div>
-  <div id="progress-bar"></div>
-
   <nav>
-    <div class="nav-inner">
-      <a href="index.html#home" class="logo">Chahatesh.</a>
+    <div class="wrap">
+      <a href="index.html#home" class="logo">Chahatesh</a>
       <ul class="nav-links">
-        <li><a href="index.html#home">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="index.html#skills">Skills</a></li>
-        <li><a href="index.html#achievements">Achievements</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="index.html#home">home</a></li>
+        <li><a href="projects.html" class="active">projects</a></li>
+        <li><a href="achievements.html">achievements</a></li>
+        <li><a href="index.html#contact">contact</a></li>
       </ul>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">☀️</button>
-      <button class="hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="achievements.html" class="nav-archive">achievements →</a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">menu</button>
+    </div>
+    <div class="mobile-nav">
+      <a href="index.html#home">home</a>
+      <a href="projects.html">projects</a>
+      <a href="achievements.html">achievements</a>
+      <a href="index.html#contact">contact</a>
     </div>
   </nav>
 
-  <div class="mobile-nav">
-    <a href="index.html#home">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="index.html#skills">Skills</a>
-    <a href="index.html#achievements">Achievements</a>
-    <a href="index.html#contact">Contact</a>
-  </div>
-
-  <section class="projects-hero">
-    <h1>All Projects</h1>
-    <p style="color: var(--muted);">Search, filter, and explore what I've built.</p>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Projects</h1>
+      <p>19 things I made.</p>
+    </div>
   </section>
 
-  <section id="project-list" style="padding-top: 0;">
+  <section class="section-split wrap">
     <div class="filter-bar">
-      <input type="text" id="search" class="search-input" placeholder="Search projects..." />
-      <button class="category-btn active" data-category="all">All</button>
-      <button class="category-btn" data-category="ai">AI</button>
-      <button class="category-btn" data-category="robotics">Robotics</button>
-      <button class="category-btn" data-category="web">Web</button>
-      <button class="category-btn" data-category="education">Education</button>
+      <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="filter-btn" data-filter="ai" aria-pressed="false">AI</button>
+      <button type="button" class="filter-btn" data-filter="robotics" aria-pressed="false">Robotics</button>
+      <button type="button" class="filter-btn" data-filter="web" aria-pressed="false">Web</button>
+      <button type="button" class="filter-btn" data-filter="education" aria-pressed="false">Education</button>
     </div>
 
-    <div class="projects-grid" id="projects-grid"></div>
+    <div class="archive-grid" id="archive-grid"></div>
   </section>
 
   <footer>
-    <a href="index.html" class="view-all">← Back Home</a>
+    <div class="wrap">
+      <p><a href="achievements.html" class="text-link">See my achievements →</a></p>
+      <p style="margin-top: 1rem;">© <span id="year2"></span> Chahatesh. Designed and built by me.</p>
+    </div>
   </footer>
 
-  <script src="main.js"></script>
+  <div class="modal-overlay" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content" id="modal-body"></div>
+  </div>
+
+  <script>
+    const projects = [
+      { title: 'Atlas AI', cat: 'ai', img: 'https://user-cdn.hackclub-assets.com/019fccdf-1afe-7972-9eec-9ec147c3f0c9/Screenshot%202026-08-04%20085839.png', link: null },
+      { title: 'Understand', cat: 'ai', img: 'https://cdn.hackclub.com/019fccf8-7bec-7f63-b0cd-d416628d934e/Screenshot%202026-08-04%20093047.png', alt: 'Understand app screenshot', link: 'https://github.com/chahatesh/Understand' },
+      { title: 'Neural Navigator', cat: 'ai', img: 'https://user-cdn.hackclub-assets.com/019fcd23-e546-7a10-acba-7bcf304efaa9/Screenshot%202026-08-04%20101801.png', link: 'https://github.com/chahatesh/Neural-Navigator' },
+      { title: '4-DOF Robotic Arm', cat: 'robotics', img: 'https://cdn.hackclub.com/019fccf0-1264-7f60-b32c-f24f5a67ba58/IMG_9954%20(1).png', alt: 'Photo of the 3D-printed robotic arm', link: 'https://www.printables.com/model/1784586-mg955-servo-robot-arm' },
+      { title: 'Versatile XY Gantry', cat: 'robotics', img: 'https://cdn.hackclub.com/019fccfa-dd92-7ba2-9d65-190e979e4052/Screenshot%202026-07-30%20115514.png', alt: 'Versatile XY Gantry CAD screenshot', link: 'https://cad.onshape.com/documents/9da4eec7b662b0f1e534ab21/w/bc1797026b485face401b90d/e/d9868a8ba112fb367924a744' },
+      { title: 'SmartSchedule AI', cat: 'robotics', img: 'https://cdn.hackclub.com/019fccff-734f-797d-ad9b-5d4965f22dda/Screenshot%202026-08-04%20093826.png', alt: 'SmartSchedule AI screenshot', link: 'https://github.com/chahatesh/SmartSchedule' },
+      { title: 'Self-Balancing Robot', cat: 'robotics', img: 'https://cdn.hackclub.com/019fcd04-46d5-7608-8103-5c235707e21b/IMG_9674.png', alt: 'Photo of the self-balancing robot', link: 'https://github.com/chahatesh/Self-Balancing-Robot' },
+      { title: 'ESP32 Robot Car', cat: 'robotics', img: null, alt: 'No finished ESP32 Robot Car build photo posted', link: 'https://www.youtube.com/@CKInnovates' },
+      { title: 'Stackable Battery Holder', cat: 'robotics', img: 'https://user-cdn.hackclub-assets.com/019fcd26-2803-78ce-a613-62f09a019223/14.png', alt: 'Photo of the stackable battery holder print', link: 'https://makerworld.com/en/models/3117060-best-stackable-battery-holder-fast-and-useful' },
+      { title: 'Arduino Projects', cat: 'robotics', img: null, alt: 'No photo posted for the small builds yet', link: 'https://www.youtube.com/@CKInnovates' },
+      { title: 'VEX IQ Robotics', cat: 'robotics', img: 'https://cdn.hackclub.com/019fcd29-e14d-73f8-9b8b-419509e6aeb2/maxresdefault.jpg', alt: 'VEX IQ Robotics Competition Mix and Match', link: 'https://events.vex.com/teams/VIQRC/23761A' },
+      { title: 'WebOS', cat: 'web', img: 'https://cdn.hackclub.com/019fccfe-2aba-7f17-b846-abc93675fc06/Screenshot%202026-08-04%20093704.png', alt: 'WebOS screenshot', link: 'https://github.com/chahatesh/Web-OS' },
+      { title: 'StudyPath', cat: 'education', img: 'https://user-cdn.hackclub-assets.com/019fccf2-eef1-7a34-8722-6ff4cdaae387/Screenshot%202026-08-04%20092439.png', alt: 'StudyPath app screenshot', link: 'https://github.com/chahatesh/StudyPath' },
+      { title: 'Portfolio Website', cat: 'web', img: 'https://user-cdn.hackclub-assets.com/019fcd2b-00b6-78e5-8fd4-3b8f05dc7e7e/Screenshot%202026-08-04%20102558.png', alt: 'Screenshot of Chahatesh portfolio website', link: 'https://github.com/chahatesh/Chahatesh' },
+      { title: 'Asteroid Survivor', cat: 'web', img: 'https://stardance.hackclub.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjM5NTQ3LCJwdXIiOiJibG9iX2lkIn19--906bf47359021ba4ae1f09aa924045f9346a9e78/Screenshot%202026-07-29%20104012.png', alt: 'Asteroid Survivor game screenshot from the project page', link: 'https://github.com/chahatesh/Asteroid-survivor' },
+      { title: 'EX-Space', cat: 'web', img: 'https://stardance.hackclub.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjEzMjAyLCJwdXIiOiJibG9iX2lkIn19--211de6fcbf1a30ae1cb5d28151184f7c4b917865/Screenshot%202026-07-26%20171802.png', alt: 'EX-Space dashboard screenshot from the project page', link: 'https://github.com/chahatesh/EX-Space' },
+      { title: 'Slack Bot', cat: 'web', img: 'https://stardance.hackclub.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MTg0ODI3LCJwdXIiOiJibG9iX2lkIn19--74bb7a4361d0a49343070eb7a9eaac30043ed733/Screenshot%202026-07-21%20103728.png', alt: 'Slack bot project screenshot from the project page', link: 'https://github.com/chahatesh/Slack-bot' },
+      { title: 'Rocket Flight Controller', cat: 'robotics', img: null, alt: 'No flight controller photo posted yet', link: 'https://github.com/chahatesh/Rocket-Flight-Controller' },
+      { title: 'Remote Shutter', cat: 'robotics', img: null, alt: 'No finished Remote Shutter build photo posted', link: 'https://github.com/chahatesh/Remote-Shutter' }
+    ];
+
+    const grid = document.getElementById('archive-grid');
+
+    function render(filter) {
+      grid.innerHTML = projects
+        .filter(p => filter === 'all' || p.cat === filter)
+        .map(p => `
+          <article class="archive-card" data-cat="${p.cat}">
+            <div class="archive-thumb${p.img ? '' : ' image-missing'}">
+              ${p.img ? `<img src="${p.img}" alt="${p.alt || p.title}" loading="lazy" decoding="async" onerror="this.onerror=null;this.hidden=true;this.parentElement.classList.add('image-missing');" />` : ''}
+              <span class="archive-image-missing" aria-hidden="true">${p.img ? 'Image unavailable' : 'No photo posted yet'}</span>
+            </div>
+            <div class="archive-body">
+              <h3>${p.title}</h3>
+              ${p.link ? `<a href="${p.link}" target="_blank" rel="noopener" class="archive-link">View →</a>` : '<span class="archive-link disabled">No link yet</span>'}
+            </div>
+          </article>
+        `).join('');
+    }
+
+    render('all');
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+        render(btn.dataset.filter);
+      });
+    });
+
+    document.getElementById('year2').textContent = new Date().getFullYear();
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const setMenuState = open => {
+      mobileNav.classList.toggle('open', open);
+      menuToggle.textContent = open ? 'close' : 'menu';
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    menuToggle.addEventListener('click', () => {
+      setMenuState(!mobileNav.classList.contains('open'));
+    });
+    document.querySelectorAll('.mobile-nav a').forEach(a => a.addEventListener('click', () => {
+      setMenuState(false);
+    }));
+  </script>
 </body>
 </html>
