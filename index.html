@@ -3,227 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#191815" />
-  <title>Chahatesh — Software, Robotics &amp; AI</title>
-  <meta name="description" content="Chahatesh Killada builds software, robots, and practical AI tools." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Chahatesh Killada — Software, Robotics &amp; AI</title>
+  <meta name="description" content="I'm Chahatesh. I build robots, write software, and make videos about the process. Take a look at what I've been making." />
+  <link rel="icon" href="favicon.svg?v=ck1" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
+  <script src="project-cases.js" defer></script>
+  <script src="main.js" defer></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YGKZSH2G33"></script>
   <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-YGKZSH2G33');</script>
 </head>
-
 <body>
-
-  <nav>
-    <div class="wrap">
-      <a href="#home" class="logo">Chahatesh</a>
-      <ul class="nav-links">
-        <li><a href="#home">home</a></li>
-        <li><a href="#videos">videos</a></li>
-        <li><a href="#projects">projects</a></li>
-        <li><a href="#achievements">achievements</a></li>
-        <li><a href="#about">about</a></li>
-        <li><a href="#contact">contact</a></li>
-      </ul>
-      <a href="achievements.html" class="nav-archive">achievements →</a>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">menu</button>
-    </div>
-    <div class="mobile-nav">
-      <a href="#home">home</a>
-      <a href="#videos">videos</a>
-      <a href="#projects">projects</a>
-      <a href="#achievements">achievements</a>
-      <a href="#about">about</a>
-      <a href="#contact">contact</a>
-    </div>
-  </nav>
-
-  <header id="home" class="hero">
-    <div class="wrap">
-    <div class="hero-main">
-      <h1 class="hero-title">Chahatesh<span class="hero-dot">.</span></h1>
-      <p class="hero-sub">I build software, robots, and AI tools.</p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View my work</a>
-      </div>
-    </div>
-    <p class="hero-facts-line"><span class="fact">13 years old</span><span class="fact">14+ projects built</span><span class="fact">2× state trips</span><span class="fact">1k+ StudyPath users</span></p>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap"><a class="site-name" href="index.html">Chahatesh Killada</a><nav aria-label="Main navigation"><a href="projects.html">Projects</a><a href="achievements.html">Achievements</a><a href="#about">About</a><a href="#contact">Contact</a></nav></header>
+  <main id="main" class="wrap">
+  <header id="home" class="intro">
+    <div class="intro-copy"><h1>Chahatesh Killada</h1><p>I build robots and software, and make videos about the process.</p><p class="intro-links"><a href="https://github.com/chahatesh" target="_blank" rel="noopener">GitHub</a><a href="https://www.youtube.com/@CKInnovates" target="_blank" rel="noopener">YouTube</a><a href="mailto:chahatesh.killada@gmail.com">Email</a></p></div>
+    <div class="intro-gallery">
+      <figure><button type="button" class="intro-photo" data-certificate="assets/balancing-robot.webp" data-title="Self-balancing robot" aria-label="Enlarge the self-balancing robot photo"><img src="assets/balancing-robot.webp" alt="My self-balancing robot with its exposed electronics and yellow wheels" width="1050" height="1400" fetchpriority="high" /></button><figcaption>Self-balancing robot</figcaption></figure>
+      <figure><button type="button" class="intro-photo" data-certificate="certs/ct-codeing.png" data-title="Presenting Neural Navigator" aria-label="Enlarge the Neural Navigator presentation photo"><img src="assets/ct-certificate.webp" alt="Presenting Neural Navigator at the Connecticut Computing Challenge" width="850" height="477" fetchpriority="high" /></button><figcaption>Neural Navigator at the CT Computing Challenge</figcaption></figure>
     </div>
   </header>
 
-  <main class="wrap">
-
-    <section id="videos" class="section-split">
-      <div class="section-header">
-        <h2>Videos</h2>
-        <a href="https://www.youtube.com/@CKInnovates" target="_blank" rel="noopener" class="text-link">my channel →</a>
-      </div>
-
-      <div class="video-grid">
-        <article class="video-card featured">
-          <a class="video-thumb" href="https://www.youtube.com/shorts/6RY44eswr0Y" target="_blank" rel="noopener" aria-label="Watch the robot build on YouTube">
-            <img src="https://i.ytimg.com/vi/6RY44eswr0Y/hqdefault.jpg" alt="Thumbnail for How did I build a robot out of this" loading="lazy" />
-            <span class="video-play" aria-hidden="true"></span>
-          </a>
-          <div class="video-card-body">
-            <h3>How did I build a robot out of this?</h3>
-          </div>
-        </article>
-
-        <article class="video-card">
-          <a class="video-thumb" href="https://www.youtube.com/watch?v=cSldQJsDNWY" target="_blank" rel="noopener" aria-label="Watch I Let My AI Plan Every Minute of My Week on YouTube">
-            <img src="https://i.ytimg.com/vi/cSldQJsDNWY/hqdefault.jpg" alt="Thumbnail for I Let My AI Plan Every Minute of My Week" loading="lazy" />
-            <span class="video-play" aria-hidden="true"></span>
-          </a>
-          <div class="video-card-body">
-            <h3>I Let My AI Plan Every Minute of My Week</h3>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="projects" class="section-split">
-      <div class="section-header">
-        <h2>Stuff I made</h2>
-        <a href="projects.html" class="view-all">See everything →</a>
-      </div>
-
-      <div class="project-grid">
-        <article class="project-card project-xl" data-cat="ai">
-          <img src="https://user-cdn.hackclub-assets.com/019fccdf-1afe-7972-9eec-9ec147c3f0c9/Screenshot%202026-08-04%20085839.png" alt="Atlas AI" loading="lazy" />
-          <h3>Atlas AI</h3>
-          <button class="text-link" data-open-modal="atlas">Read case study →</button>
-        </article>
-
-        <article class="project-card project-tall" data-cat="education">
-          <img src="https://cdn.hackclub.com/019fccf2-eef1-7a34-8722-6ff4cdaae387/Screenshot%202026-08-04%20092439.png" alt="StudyPath app screenshot" loading="lazy" />
-          <h3>StudyPath</h3>
-          <a href="https://github.com/chahatesh/StudyPath" target="_blank" rel="noopener" class="text-link">GitHub →</a>
-        </article>
-
-        <article class="project-card project-wide" data-cat="robotics">
-          <img src="https://cdn.hackclub.com/019fccf0-1264-7f60-b32c-f24f5a67ba58/IMG_9954%20(1).png" alt="Photo of the 3D-printed robotic arm" loading="lazy" />
-          <h3>4-DOF Robotic Arm</h3>
-          <a href="https://www.printables.com/model/1784586-mg955-servo-robot-arm" target="_blank" rel="noopener" class="text-link">Files →</a>
-        </article>
-
-        <article class="project-card" data-cat="ai">
-          <img src="https://cdn.hackclub.com/019fccf8-7bec-7f63-b0cd-d416628d934e/Screenshot%202026-08-04%20093047.png" alt="Understand app screenshot" loading="lazy" />
-          <h3>Understand</h3>
-          <a href="https://github.com/chahatesh/Understand" target="_blank" rel="noopener" class="text-link">GitHub →</a>
-        </article>
-
-        <article class="project-card" data-cat="ai">
-          <img src="https://user-cdn.hackclub-assets.com/019fcd23-e546-7a10-acba-7bcf304efaa9/Screenshot%202026-08-04%20101801.png" alt="Neural Navigator" loading="lazy" />
-          <h3>Neural Navigator</h3>
-          <a href="https://github.com/chahatesh/Neural-Navigator" target="_blank" rel="noopener" class="text-link">GitHub →</a>
-        </article>
-
-        <article class="project-card project-wide" data-cat="robotics">
-          <div class="project-image-missing" role="img" aria-label="VEX IQ Robotics Competition"><strong>VEX IQ</strong></div>
-          <h3>VEX IQ Robotics</h3>
-          <a href="https://events.vex.com/teams/VIQRC/23761A" target="_blank" rel="noopener" class="text-link">Team page →</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="achievements" class="section-split">
-      <div class="section-header"><h2>Work I am proud of</h2><a href="achievements.html" class="view-all">See all of it →</a></div>
-      <div class="achieve-layout">
-        <div class="achieve-list">
-          <article class="achieve-item"><img src="certs/ct-codeing.png" alt="Connecticut Computing Challenge certificate" loading="lazy" /><div><span class="achieve-year">2026 · with Madanmohan Aravind</span><h3>CT Computing Challenge</h3></div></article>
-          <article class="achieve-item"><img src="certs/stardance.jpg" alt="Stardance Certificate of Recognition for Chahatesh" loading="lazy" /><div><span class="achieve-year">2024–25</span><h3>Stardance Ambassador</h3></div></article>
-          <article class="achieve-item"><div class="achieve-image-missing" aria-label="No VEX team photo posted"><strong>No team photo</strong></div><div><span class="achieve-year">2025–26</span><h3>VEX IQ State Championship Qualifier</h3></div></article>
-          <article class="achieve-item"><div class="achieve-image-missing" aria-label="No school team photo posted"><strong>No team photo</strong></div><div><span class="achieve-year">3 years running</span><h3>School robotics team</h3></div></article>
-        </div>
-        <div class="certificates">
-          <h3 class="cert-title">A few numbers</h3>
-          <ul class="numbers-list"><li><strong>Top 10</strong><span>2026 CT coding challenge</span></li><li><strong>2×</strong><span>VEX IQ state trips</span></li><li><strong>6 / 11</strong><span>Stardance awards</span></li></ul>
-          <div class="cert-grid"><a href="https://stardance.hackclub.com/projects/19485" target="_blank" rel="noopener" class="cert-card"><img src="https://stardance.hackclub.com/projects/19485/og_image" alt="Self-balancing robot project cover" loading="lazy" /><span>Self-balancing robot build</span></a></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section-split">
-      <div class="section-header"><h2>About me</h2></div>
-      <div class="about-grid">
-        <div class="about-text">
-          <p class="lead">I was the person who took everything apart to learn how it works. I put it all back, and most of the time it worked just as I intended. I'm actually currently in the 9th grade. I'm a freshman at Avon Middle School, and I'm organizing a hackathon.</p>
-        </div>
-
-        <div class="about-side">
-          <div class="awards-mini">
-            <h4>Awards</h4>
-            <ul>
-              <li>CT Lt. Governor’s Computing Challenge Finalist</li>
-              <li>Stardance Certificate of Recognition</li>
-              <li>2× VEX IQ State Championship Qualifier</li>
-              <li>VEX IQ Judge’s Award</li>
-              <li>VEX IQ Teamwork Award</li>
-              <li>VEX IQ Skills Challenge — 3rd Place</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="journey" class="section-split">
-      <div class="section-header">
-        <h2>How it started</h2>
-      </div>
-
-      <ol class="timeline">
-        <li><span class="timeline-marker">01</span><div><span class="timeline-year">2018</span><h3>I made my first circuit</h3></div></li>
-        <li><span class="timeline-marker">02</span><div><span class="timeline-year">2020</span><h3>I learned about robots and how they work</h3></div></li>
-        <li><span class="timeline-marker">03</span><div><span class="timeline-year">2025</span><h3>Did my very first robotics competition</h3></div></li>
-        <li><span class="timeline-marker">04</span><div><span class="timeline-year">2026</span><h3>Did a robotics competition again and placed second</h3></div></li>
-      </ol>
-    </section>
-
-    <section id="contact" class="section-split">      <div class="section-header">
-        <h2>Get in touch</h2>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info">
-          <p class="lead">Email me.</p>
-          <div class="contact-links">
-            <a href="mailto:chahatesh.killada@gmail.com" class="contact-line">chahatesh.killada@gmail.com</a>
-            <a href="https://www.youtube.com/@CKInnovates" target="_blank" rel="noopener" class="contact-line">youtube.com/@CKInnovates</a>
-            <a href="https://www.instagram.com/ck_innovates/" target="_blank" rel="noopener" class="contact-line">instagram.com/ck_innovates</a>
-            <a href="https://github.com/chahatesh" target="_blank" rel="noopener" class="contact-line">github.com/chahatesh</a>
-          </div>
-        </div>
-
-        <form class="contact-form" id="contact-form" novalidate>
-          <input type="hidden" name="access_key" value="5ab9dba0-218a-4104-ba64-5a668e0baead" />
-          <input type="hidden" name="subject" value="New message from chahatesh.com" />
-
-          <div class="form-row">
-            <input type="text" name="name" placeholder="Name" required autocomplete="name" />
-            <input type="email" name="email" placeholder="Email" required autocomplete="email" aria-label="Email" />
-          </div>
-          <input type="text" name="subject_user" placeholder="Subject" aria-label="Subject" />
-          <textarea name="message" placeholder="What are you building?" required rows="5" aria-label="Your message"></textarea>              <button type="submit" class="btn btn-primary" id="submit-btn">Send message</button>
-              <div class="form-status" role="status" aria-live="polite" id="form-status"></div>
-        </form>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <p>© <span id="year"></span> Chahatesh</p>
+  <section id="projects" class="section" aria-labelledby="work-title">
+    <div class="section-heading"><h2 id="work-title">Selected projects</h2><a href="projects.html">All projects</a></div>
+    <div class="selected-work">
+      <article class="work-project">
+        <div class="work-copy"><h3><button type="button" data-open-modal="arm">4-DOF robotic arm</button></h3><p>A robotic arm I designed in CAD, 3D printed, and built with servo motors.</p><button type="button" class="text-link" data-open-modal="arm">Build details</button></div>
+        <button type="button" class="project-preview photo-preview" data-open-modal="arm" aria-label="View the robotic arm project"><img src="assets/robot-arm.webp" alt="My 3D-printed robotic arm on my desk" width="1050" height="1400" loading="lazy" /></button>
+      </article>
+      <article class="work-project">
+        <div class="work-copy"><h3><button type="button" data-open-modal="studypath">StudyPath</button></h3><p>STEM practice that adapts to the student, with review tools and a teacher dashboard.</p><button type="button" class="text-link" data-open-modal="studypath">Project details</button></div>
+        <button type="button" class="project-preview" data-open-modal="studypath" aria-label="View the StudyPath project"><img src="assets/studypath.webp" alt="StudyPath’s learning dashboard" width="1600" height="740" loading="lazy" /></button>
+      </article>
+      <article class="work-project">
+        <div class="work-copy"><h3><button type="button" data-open-modal="atlas">Atlas AI</button></h3><p>An AI assistant with memory, vision, voice, and robotics tools. In progress.</p><button type="button" class="text-link" data-open-modal="atlas">Project details</button></div>
+        <button type="button" class="project-preview" data-open-modal="atlas" aria-label="View the Atlas AI project"><img src="assets/atlas.webp" alt="Atlas AI’s interface" width="1600" height="759" loading="lazy" /></button>
+      </article>
+      <article class="work-project">
+        <div class="work-copy"><h3><a href="https://github.com/chahatesh/Rocket-Flight-Controller-PCB" target="_blank" rel="noopener">Rocket flight controller PCB</a></h3><p>An ESP32-S3 design with an IMU, barometer, microSD storage, and battery power. In progress.</p><button type="button" class="text-link" data-certificate="assets/flight-controller-schematic.png" data-title="Rocket flight controller schematic">View the schematic</button></div>
+        <button type="button" class="project-preview" data-certificate="assets/flight-controller-schematic.png" data-title="Rocket flight controller schematic" aria-label="Enlarge my rocket flight controller schematic"><img src="assets/flight-controller-schematic.png" alt="My KiCad rocket flight controller schematic" width="1030" height="712" loading="lazy" /></button>
+      </article>
     </div>
-  </footer>
+  </section>
 
-  <div class="modal-overlay" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal-content" id="modal-body"></div>
-  </div>
+  <section id="more-projects" class="section more-projects" aria-labelledby="more-title">
+    <div class="section-heading"><h2 id="more-title">More projects</h2><a href="projects.html">See all 20</a></div>
+    <div class="build-gallery">
+      <article><a class="build-gallery-image" href="https://cad.onshape.com/documents/9da4eec7b662b0f1e534ab21/w/bc1797026b485face401b90d/e/d9868a8ba112fb367924a744" target="_blank" rel="noopener"><img src="assets/versatile-xy-gantry.webp" alt="The CAD design for my XY gantry" loading="lazy" /></a><h3><a href="https://cad.onshape.com/documents/9da4eec7b662b0f1e534ab21/w/bc1797026b485face401b90d/e/d9868a8ba112fb367924a744" target="_blank" rel="noopener">XY gantry</a></h3></article>
+      <article><a class="build-gallery-image" href="https://makerworld.com/en/models/3117060-best-stackable-battery-holder-fast-and-useful" target="_blank" rel="noopener"><img src="assets/stackable-battery-holder.webp" alt="My stackable 3D-printed battery holder" loading="lazy" /></a><h3><a href="https://makerworld.com/en/models/3117060-best-stackable-battery-holder-fast-and-useful" target="_blank" rel="noopener">Stackable battery holder</a></h3></article>
+      <article><a class="build-gallery-image" href="https://github.com/chahatesh/Neural-Navigator" target="_blank" rel="noopener"><img src="assets/neural-navigator.webp" alt="The Neural Navigator project interface" loading="lazy" /></a><h3><a href="https://github.com/chahatesh/Neural-Navigator" target="_blank" rel="noopener">Neural Navigator</a></h3></article>
+    </div>
+  </section>
 
-  <script src="main.js"></script>
+  <section id="videos" class="section" aria-labelledby="videos-title">
+    <div class="section-heading"><h2 id="videos-title">Videos</h2><a href="https://www.youtube.com/@CKInnovates" target="_blank" rel="noopener">CK Innovates on YouTube</a></div>
+    <div class="video-grid">
+      <article class="video-item"><a class="video-thumb" href="https://www.youtube.com/shorts/6RY44eswr0Y" target="_blank" rel="noopener" aria-label="Watch How did I build a robot out of this?"><img src="assets/robot-video.webp" width="480" height="360" alt="A frame from my robot build video" loading="lazy" /></a><h3><a href="https://www.youtube.com/shorts/6RY44eswr0Y" target="_blank" rel="noopener">How did I build a robot out of this?</a></h3></article>
+      <article class="video-item"><a class="video-thumb" href="https://www.youtube.com/watch?v=cSldQJsDNWY" target="_blank" rel="noopener" aria-label="Watch I Let My AI Plan Every Minute of My Week"><img src="assets/schedule-video.webp" width="480" height="360" alt="A frame from my AI scheduling experiment" loading="lazy" /></a><h3><a href="https://www.youtube.com/watch?v=cSldQJsDNWY" target="_blank" rel="noopener">I Let My AI Plan Every Minute of My Week</a></h3></article>
+    </div>
+  </section>
+
+  <section id="about" class="section about-section" aria-labelledby="about-title">
+    <div class="about-layout">
+      <div class="about-copy">
+        <h2 id="about-title">About</h2>
+        <p class="about-lead">I build <strong>software</strong> and <strong>hardware.</strong></p>
+        <p>I started and lead an <strong>after-school robotics class</strong>, and compete in <strong>VEX IQ</strong> with my school’s team.</p>
+      </div>
+      <div class="milestones" id="achievements">
+        <h3>Achievements</h3>
+        <ul>
+          <li>
+            <span class="milestone-label">2026</span>
+            <div class="milestone-copy"><h4>CT Computing Challenge</h4><p>Recognized for <strong>Neural Navigator</strong>, built with Madanmohan Aravind.</p></div>
+          </li>
+          <li>
+            <span class="milestone-label">2025–26</span>
+            <div class="milestone-copy"><h4>VEX IQ State Championship</h4><p>Qualified <strong>twice</strong> with my school’s team.</p></div>
+          </li>
+          <li>
+            <span class="milestone-label">Hack Club</span>
+            <div class="milestone-copy"><h4>Stardance Ambassador</h4><p>Also earned a Certificate of Achievement for <strong>7 shipped projects</strong> and <strong>57 hours of work.</strong></p></div>
+          </li>
+        </ul>
+        <a href="achievements.html">More achievements <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+    <h2 id="contact-title">Get in touch</h2>
+    <p><a href="mailto:chahatesh.killada@gmail.com">chahatesh.killada@gmail.com</a></p>
+    <p class="contact-socials"><a href="https://github.com/chahatesh" target="_blank" rel="noopener">GitHub</a><a href="https://www.youtube.com/@CKInnovates" target="_blank" rel="noopener">YouTube</a><a href="https://www.instagram.com/ck_innovates/" target="_blank" rel="noopener">Instagram</a></p>
+    <details class="message-details"><summary>Send a message here</summary><form class="contact-form" id="contact-form" novalidate>
+          <input type="hidden" name="access_key" value="5ab9dba0-218a-4104-ba64-5a668e0baead" /><input type="hidden" name="subject" value="New message from chahatesh.com" />
+          <div class="form-row"><label>Your name<input type="text" name="name" required autocomplete="name" placeholder="Name" /></label><label>Your email<input type="email" name="email" required autocomplete="email" placeholder="you@example.com" /></label></div>
+          <label>Subject <span class="optional">(optional)</span><input type="text" name="subject_user" placeholder="What’s on your mind?" /></label>
+          <label>Message<textarea name="message" required rows="4" placeholder="Tell me a little about it…"></textarea></label>
+          <div class="form-bottom"><button type="submit" class="btn btn-primary" id="submit-btn">Send message <span aria-hidden="true">↗</span></button><p class="form-status" role="status" aria-live="polite" id="form-status"></p></div>
+        </form></details>
+  </section>
+</main>
+  <footer class="site-footer wrap"><p>Chahatesh Killada · <span data-year>2026</span></p><a href="#home">Back to top</a></footer>
+  <div class="modal-overlay" id="project-modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-content" id="modal-body" tabindex="-1"></div></div>
 </body>
 </html>
