@@ -98,6 +98,7 @@ button:disabled { cursor: wait; opacity: .6; }
 .about-copy { max-width: 380px; }
 .about-copy h2 { margin-bottom: 21px; }
 .about-copy p { font-size: 16px; line-height: 1.8; }
+.about-copy p + p { margin-top: 14px; }
 .about-copy .about-lead { max-width: 320px; font-size: 26px; line-height: 1.45; letter-spacing: -.4px; margin-bottom: 18px; }
 .about-copy strong { font-weight: 600; }
 .about-lead strong { color: var(--link); }
