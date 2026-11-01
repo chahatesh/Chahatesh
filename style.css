@@ -352,16 +352,16 @@ button:disabled { cursor: wait; opacity: .6; }
 .home-intro.intro { padding-top: 42px; }
 .home-intro.intro:has(+ .project-carousel) { padding-bottom: 52px; }
 .home-intro .intro-copy { max-width: 900px; }
-.home-intro h1 { font-size: clamp(54px, 8vw, 104px); font-weight: 600; line-height: .99; letter-spacing: -.055em; margin-bottom: 26px; }
+.home-intro h1 { font-family: var(--body); font-size: clamp(54px, 8vw, 104px); font-weight: 700; line-height: .99; letter-spacing: -.055em; margin-bottom: 26px; }
 .home-intro h1 > span { display: block; }
 .home-intro .intro-surname { color: var(--ink); }
 .home-intro .intro-period { color: var(--ink); }
-.home-intro .intro-statement { max-width: 700px; margin-top: 0; font-family: var(--display); font-size: clamp(23px, 3vw, 33px); line-height: 1.35; letter-spacing: -.025em; }
+.home-intro .intro-statement { max-width: 700px; margin-top: 0; font-family: var(--body); font-size: clamp(23px, 3vw, 33px); line-height: 1.35; letter-spacing: -.025em; }
 .home-intro .intro-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 456px; gap: 12px; margin-top: 28px; font-size: 14px; }
-.home-intro .intro-links a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 12px 18px; border: 1px solid var(--ink); border-radius: 8px; background: var(--ink); color: #fff; font-weight: 500; text-decoration: none; box-shadow: 0 3px 0 #dce3e0; transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease; }
+.home-intro .intro-links a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 12px 18px; border: 1px solid #8d9995; border-radius: 8px; background: #fff; color: var(--ink); font-weight: 500; text-decoration: none; box-shadow: 0 3px 0 #dce3e0; transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease; }
 .home-intro .intro-links a span { transition: transform 180ms ease; }
 .home-intro .intro-links a:active { transform: translateY(1px); box-shadow: 0 1px 0 #dce3e0; }
-.home-intro .intro-links a:hover { background: #383f3f; transform: translateY(-2px); box-shadow: 0 5px 0 #dce3e0; }
+.home-intro .intro-links a:hover { background: #f5f7f6; transform: translateY(-2px); box-shadow: 0 5px 0 #dce3e0; }
 .home-intro .intro-links a:hover span { transform: translate(2px, -2px); }
 @media (max-width: 520px) {
  .home-intro.intro { padding-top: 25px; }
@@ -377,3 +377,6 @@ button:disabled { cursor: wait; opacity: .6; }
 @media (prefers-reduced-motion: reduce) {
  .home-intro .intro-links a, .home-intro .intro-links a span { transition: none; }
 }
+
+/* Omit the extra intro copy from the rendered landing page. */
+.home-intro .intro-eyebrow, .home-intro .intro-detail { display: none; }
