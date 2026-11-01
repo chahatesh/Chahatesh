@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="CK — Chahatesh Killada">
-  <rect width="64" height="64" rx="14" fill="#356f65"/>
-  <g fill="none" stroke="#ffffff" stroke-width="5.5" stroke-linecap="square" stroke-linejoin="round">
-    <path d="M27 20c-3-3-6-4-9-2-5 2-7 7-7 14s2 12 7 14c3 2 6 1 9-2"/>
-    <path d="M37 18v28m16-28L38 32l15 14"/>
+  <rect width="64" height="64" rx="12" fill="#000000"/>
+  <g fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M27 21C25 19 23 18 20 18C14 18 11 23 11 32C11 41 14 46 20 46C23 46 25 45 27 43"/>
+    <path d="M37 18V46M53 18L37 32L53 46"/>
   </g>
 </svg>
