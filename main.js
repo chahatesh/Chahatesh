@@ -75,12 +75,14 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-open-modal]').forEach(button => button.addEventListener('click', () => {
     const data = typeof PROJECT_CASES !== 'undefined' ? PROJECT_CASES[button.dataset.openModal] : null;
     if (!data) return;
+    const gallery = (data.gallery || []).map((src, i) => `<a href="${escapeHTML(src)}" target="_blank" rel="noopener" aria-label="Open project photo ${i + 2}"><img src="${escapeHTML(src)}" alt="${escapeHTML(data.title)} — photo ${i + 2}" loading="lazy" style="width:100%;height:180px;object-fit:contain;" /></a>`).join('');
     const architecture = data.architecture.map(item => `<li class="arch-item">${escapeHTML(item)}</li>`).join('');
     const challenges = data.challenges.map(item => `<div class="challenge-item"><h4>${escapeHTML(item.title)}</h4><p>${escapeHTML(item.text)}</p></div>`).join('');
     const links = data.links.map(link => `<a href="${escapeHTML(link.href)}" target="_blank" rel="noopener" class="btn btn-secondary">${escapeHTML(link.text)} ↗</a>`).join('');
     showDialog(`
       <div class="modal-header"><div><p class="project-meta">${escapeHTML(data.category)}</p><h2 id="modal-title">${escapeHTML(data.title)}</h2></div><button type="button" class="modal-close" aria-label="Close project">×</button></div>
       <img src="${escapeHTML(data.image)}" alt="${escapeHTML(data.title)}" class="modal-image" />
+      ${gallery ? `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px;">${gallery}</div>` : ''}
       <div class="case-block"><h3>Why I made it</h3><p>${escapeHTML(data.problem)}</p></div>
       <div class="case-block"><h3>What’s inside</h3><ul class="architecture-grid">${architecture}</ul></div>
       <div class="case-block"><h3>What took some figuring out</h3>${challenges}</div>
