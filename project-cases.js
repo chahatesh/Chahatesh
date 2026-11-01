@@ -1,19 +1,19 @@
 const PROJECT_CASES = {
     ion: {
   "title": "Ion Engine",
-  "category": "Electronics · Experiment stopped",
+  "category": "Electronics · New module & test videos",
   "image": "https://cdn.hackclub.com/01a19786-09c3-7ac7-932f-17a6c999de87/IMG_1346.png",
   "gallery": [
     "https://cdn.hackclub.com/01a19786-0be7-722c-8a15-2c98f14aac9e/IMG_1347.png",
     "https://cdn.hackclub.com/01a19786-0de4-7b35-96c0-6d544df16b69/IMG_1348.png",
     "https://cdn.hackclub.com/01a19786-0f2a-7027-b08c-7da730e1daee/IMG_1349.png"
   ],
-  "problem": "I wanted to see if I could move air with electricity instead of a fan. I built a small ion-wind experiment and tried it once.",
+  "problem": "I wanted to see if I could move air with electricity instead of a fan. After my first module burned out, I got a replacement and recorded some more tests.",
   "architecture": [
     "Ion wind",
-    "High-voltage module",
+    "Replacement high-voltage module",
     "Advertised as 400 kV",
-    "One brief test"
+    "Recorded tests"
   ],
   "challenges": [
     {
@@ -33,11 +33,15 @@ const PROJECT_CASES = {
       "text": "After I connected everything, I ran one test. While it worked, I felt a very faint breeze, but nothing stronger. Then the module sparked a little and burned out. It was disappointing, and the spark was a little scary."
     },
     {
-      "title": "Why I stopped",
-      "text": "I decided it was not a safe idea to keep testing this setup. It produced very little airflow and did not seem worth the risk. I did not measure its thrust, power use, or efficiency, so I cannot give it an efficiency rating."
+      "title": "A new module and another test",
+      "text": "I got a new module after the first one failed. During these tests, I swapped the positive (+) and negative (-) connections. I saw the paper being pulled toward the setup rather than pushed away. The testing video shows what I observed."
+    },
+    {
+      "title": "Sparking and shutting it down",
+      "text": "In the other video, the module sparks and I shut it down. After the first failure, I had decided to stop testing that setup. These clips document the later tests with the replacement. I have not measured thrust, power use, or efficiency."
     }
   ],
-  "result": "Testing stopped after the module failed. I learned about ion wind, and that deciding when to stop is part of engineering too.",
+  "result": "I replaced the failed module and recorded the new tests. I observed movement of the paper, and shut the setup down when it sparked. The videos below show both moments.",
   "links": [
     {
       "text": "How ion wind works — MIT",
@@ -46,6 +50,18 @@ const PROJECT_CASES = {
     {
       "text": "Spacecraft ion propulsion — NASA",
       "href": "https://science.nasa.gov/mission/dawn/technology/ion-propulsion/"
+    }
+  ],
+  "videos": [
+    {
+      "title": "Testing the replacement module",
+      "src": "https://cdn.hackclub.com/01a197e9-a569-7da6-9101-c16ec27accbd/IMG_1350.MOV.mp4",
+      "description": "I swapped the + and - connections during testing. The paper was pulled toward the setup instead of blown away."
+    },
+    {
+      "title": "Sparking, then shutting it down",
+      "src": "https://user-cdn.hackclub-assets.com/01a197e9-b1d1-7926-aab8-d119a00ccb67/IMG_1353.MOV.mp4",
+      "description": "The replacement module sparks during the test, and I shut it down."
     }
   ]
 },
