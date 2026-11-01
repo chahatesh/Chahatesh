@@ -41,6 +41,50 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   if (window.location.hash === '#project-search' && projectSearch) projectSearch.focus();
 
+
+  const track = document.getElementById('carousel-track');
+  if (track) {
+    const pauseButton = document.getElementById('carousel-pause');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let paused = reducedMotion.matches;
+    let hovered = false;
+    let focused = false;
+    let lastTime = 0;
+    let resumeAt = 0;
+    function updatePause() {
+      pauseButton.textContent = paused ? 'Play' : 'Pause';
+      pauseButton.setAttribute('aria-pressed', String(paused));
+    }
+    updatePause();
+    pauseButton.addEventListener('click', () => { paused = !paused; updatePause(); });
+    reducedMotion.addEventListener('change', () => { paused = reducedMotion.matches; updatePause(); });
+    track.addEventListener('mouseenter', () => { hovered = true; });
+    track.addEventListener('mouseleave', () => { hovered = false; });
+    track.addEventListener('focusin', () => { focused = true; });
+    track.addEventListener('focusout', event => { focused = track.contains(event.relatedTarget); });
+    ['touchstart', 'wheel', 'pointerdown'].forEach(type => track.addEventListener(type, () => { resumeAt = performance.now() + 6000; }, { passive: true }));
+    function move(direction) {
+      resumeAt = performance.now() + 6000;
+      const step = track.querySelector('.carousel-slide').getBoundingClientRect().width + 18;
+      track.scrollBy({ left: direction * step, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+    }
+    document.getElementById('carousel-prev').addEventListener('click', () => move(-1));
+    document.getElementById('carousel-next').addEventListener('click', () => move(1));
+    function tick(time) {
+      const elapsed = Math.min(time - lastTime, 50);
+      lastTime = time;
+      if (!paused && !hovered && !focused && !document.hidden && !document.body.classList.contains('modal-open') && time > resumeAt) {
+        const limit = track.scrollWidth - track.clientWidth;
+        if (limit > 0) {
+          if (track.scrollLeft >= limit - 1) track.scrollLeft = 0;
+          else track.scrollLeft += elapsed * 0.025;
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
   const modal = document.getElementById('project-modal');
   const modalBody = document.getElementById('modal-body');
   let modalTrigger = null;
