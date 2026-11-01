@@ -44,45 +44,88 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const track = document.getElementById('carousel-track');
   if (track) {
+    const slides = [...track.querySelectorAll('.carousel-slide')];
     const pauseButton = document.getElementById('carousel-pause');
+    const position = document.getElementById('carousel-position');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let paused = reducedMotion.matches;
-    let hovered = false;
-    let focused = false;
-    let lastTime = 0;
-    let resumeAt = 0;
+    let active = 0;
+    let changing = false;
+    let touchX = null;
+    let touchY = null;
+    let timer;
+    let focusWithin = false;
+    const delay = 5500;
     function updatePause() {
       pauseButton.textContent = paused ? 'Play' : 'Pause';
       pauseButton.setAttribute('aria-pressed', String(paused));
+      track.setAttribute('aria-live', paused ? 'polite' : 'off');
     }
-    updatePause();
-    pauseButton.addEventListener('click', () => { paused = !paused; updatePause(); });
-    reducedMotion.addEventListener('change', () => { paused = reducedMotion.matches; updatePause(); });
-    track.addEventListener('mouseenter', () => { hovered = true; });
-    track.addEventListener('mouseleave', () => { hovered = false; });
-    track.addEventListener('focusin', () => { focused = true; });
-    track.addEventListener('focusout', event => { focused = track.contains(event.relatedTarget); });
-    ['touchstart', 'wheel', 'pointerdown'].forEach(type => track.addEventListener(type, () => { resumeAt = performance.now() + 6000; }, { passive: true }));
+    function schedule() {
+      clearTimeout(timer);
+      if (!paused && !document.hidden && !focusWithin) {
+        timer = setTimeout(() => {
+          if (!document.body.classList.contains('modal-open')) move(1);
+          else schedule();
+        }, delay);
+      }
+    }
     function move(direction) {
-      resumeAt = performance.now() + 6000;
-      const step = track.querySelector('.carousel-slide').getBoundingClientRect().width + 18;
-      track.scrollBy({ left: direction * step, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+      if (changing || slides.length < 2) return;
+      changing = true;
+      clearTimeout(timer);
+      track.classList.add('is-resetting');
+      slides.forEach(slide => slide.classList.remove('is-leaving'));
+      track.classList.toggle('is-reversing', direction < 0);
+      void track.offsetWidth;
+      track.classList.remove('is-resetting');
+      const previous = slides[active];
+      previous.classList.remove('is-active');
+      previous.classList.add('is-leaving');
+      previous.inert = true;
+      previous.setAttribute('aria-hidden', 'true');
+      active = (active + direction + slides.length) % slides.length;
+      slides[active].classList.add('is-active');
+      slides[active].inert = false;
+      slides[active].removeAttribute('aria-hidden');
+      position.textContent = String(active + 1).padStart(2, '0') + ' / ' + slides.length;
+      setTimeout(() => {
+        previous.classList.remove('is-leaving');
+        changing = false;
+        schedule();
+      }, reducedMotion.matches ? 0 : 660);
     }
+    pauseButton.addEventListener('click', () => { paused = !paused; updatePause(); schedule(); });
     document.getElementById('carousel-prev').addEventListener('click', () => move(-1));
     document.getElementById('carousel-next').addEventListener('click', () => move(1));
-    function tick(time) {
-      const elapsed = Math.min(time - lastTime, 50);
-      lastTime = time;
-      if (!paused && !hovered && !focused && !document.hidden && !document.body.classList.contains('modal-open') && time > resumeAt) {
-        const limit = track.scrollWidth - track.clientWidth;
-        if (limit > 0) {
-          if (track.scrollLeft >= limit - 1) track.scrollLeft = 0;
-          else track.scrollLeft += elapsed * 0.025;
-        }
+    track.addEventListener('focusin', () => { focusWithin = true; clearTimeout(timer); });
+    track.addEventListener('focusout', event => { focusWithin = track.contains(event.relatedTarget); schedule(); });
+    track.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        // Move focus out of the slide before making it inert.
+        document.getElementById(event.key === 'ArrowLeft' ? 'carousel-prev' : 'carousel-next').focus();
+        move(event.key === 'ArrowLeft' ? -1 : 1);
       }
-      requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
+    });
+    track.addEventListener('touchstart', event => {
+      touchX = event.touches[0].clientX;
+      touchY = event.touches[0].clientY;
+      clearTimeout(timer);
+    }, { passive: true });
+    track.addEventListener('touchend', event => {
+      if (touchX === null) return;
+      const dx = event.changedTouches[0].clientX - touchX;
+      const dy = event.changedTouches[0].clientY - touchY;
+      touchX = touchY = null;
+      if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) move(dx < 0 ? 1 : -1);
+      else schedule();
+    }, { passive: true });
+    track.addEventListener('touchcancel', () => { touchX = touchY = null; schedule(); }, { passive: true });
+    document.addEventListener('visibilitychange', schedule);
+    reducedMotion.addEventListener('change', () => { paused = reducedMotion.matches; updatePause(); schedule(); });
+    updatePause();
+    schedule();
   }
 
   const modal = document.getElementById('project-modal');
