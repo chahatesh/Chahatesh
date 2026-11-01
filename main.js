@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function closeModal() {
     if (!modal || modal.hidden) return;
+    modalBody.querySelectorAll('video').forEach(video => video.pause());
     modal.hidden = true;
     document.body.classList.remove('modal-open');
     inertRoots.forEach(({ root, wasInert }) => { root.inert = wasInert; });
@@ -163,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const data = typeof PROJECT_CASES !== 'undefined' ? PROJECT_CASES[button.dataset.openModal] : null;
     if (!data) return;
     const gallery = (data.gallery || []).map((src, i) => `<a href="${escapeHTML(src)}" target="_blank" rel="noopener" aria-label="Open project photo ${i + 2}"><img src="${escapeHTML(src)}" alt="${escapeHTML(data.title)} — photo ${i + 2}" loading="lazy" style="width:100%;height:180px;object-fit:contain;" /></a>`).join('');
+    const videos = (data.videos || []).map((video, i) => `<figure class="case-block"><h3 id="case-video-${i}">${escapeHTML(video.title)}</h3><video controls playsinline preload="none" aria-labelledby="case-video-${i}" aria-describedby="case-video-description-${i}" style="display:block;width:100%;max-height:420px;margin-top:12px;background:#111;border-radius:4px;"><source src="${escapeHTML(video.src)}" type="video/mp4" />Your browser cannot play this video. <a href="${escapeHTML(video.src)}">Open the video</a>.</video><figcaption id="case-video-description-${i}" style="margin-top:10px;color:var(--muted);font-size:14px;line-height:1.7;">${escapeHTML(video.description)} <a href="${escapeHTML(video.src)}" target="_blank" rel="noopener">Open video ↗</a></figcaption></figure>`).join('');
     const architecture = data.architecture.map(item => `<li class="arch-item">${escapeHTML(item)}</li>`).join('');
     const challenges = data.challenges.map(item => `<div class="challenge-item"><h4>${escapeHTML(item.title)}</h4><p>${escapeHTML(item.text)}</p></div>`).join('');
     const links = data.links.map(link => `<a href="${escapeHTML(link.href)}" target="_blank" rel="noopener" class="btn btn-secondary">${escapeHTML(link.text)} ↗</a>`).join('');
@@ -174,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="case-block"><h3>What’s inside</h3><ul class="architecture-grid">${architecture}</ul></div>
       <div class="case-block"><h3>What took some figuring out</h3>${challenges}</div>
       <div class="case-block"><h3>Where it stands</h3><p>${escapeHTML(data.result)}</p></div>
+      ${videos ? `<div class="case-videos">${videos}</div>` : ''}
       ${links ? `<div class="modal-actions">${links}</div>` : ''}`, button);
   }));
 
@@ -188,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (modal.hidden) return;
       if (event.key === 'Escape') { event.preventDefault(); closeModal(); }
       if (event.key === 'Tab') {
-        const focusable = [...modal.querySelectorAll('a[href], button, [tabindex="0"]')].filter(el => !el.hidden && !el.disabled);
+        const focusable = [...modal.querySelectorAll('a[href], button, video[controls], [tabindex="0"]')].filter(el => !el.hidden && !el.disabled);
         const first = focusable[0];
         const last = focusable[focusable.length - 1];
         if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
