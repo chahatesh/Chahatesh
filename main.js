@@ -42,7 +42,45 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.location.hash === '#project-search' && projectSearch) projectSearch.focus();
 
 
+  const escapeHTML = text => String(text).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+
   const track = document.getElementById('carousel-track');
+  // Add the new builds before the carousel collects its slides.
+  if (track && typeof JOURNAL_PROJECTS !== 'undefined') {
+    const firstSlide = track.querySelector('.carousel-slide');
+    if (firstSlide) {
+      const journalSlides = JOURNAL_PROJECTS.map(project => {
+        const { title, source, journal, description, cover, alt } = project;
+        return `<article class="carousel-slide" role="group" aria-roledescription="slide" inert aria-hidden="true">
+<a class="carousel-preview" href="${escapeHTML(source)}" target="_blank" rel="noopener" aria-label="Explore ${escapeHTML(title)}">
+<img src="${escapeHTML(cover)}" alt="${escapeHTML(alt)}" loading="lazy" decoding="async" />
+</a>
+<div class="carousel-blurb">
+<p class="carousel-category">${title === 'Holonomic Drivetrain' ? 'Robotics' : 'Electronics'}</p>
+<h3>${escapeHTML(title)}</h3>
+<p class="carousel-description">${escapeHTML(description)}</p>
+<a class="text-link" href="${escapeHTML(journal)}" target="_blank" rel="noopener">Read the build journal <span aria-hidden="true">↗</span></a>
+</div>
+</article>`;
+      }).join('\n');
+      firstSlide.insertAdjacentHTML('afterend', journalSlides);
+    }
+
+    const slides = [...track.querySelectorAll('.carousel-slide')];
+    slides.forEach((slide, index) => {
+      slide.setAttribute('aria-label', `${index + 1} of ${slides.length}`);
+      const title = slide.querySelector('h3')?.textContent.trim();
+      const description = slide.querySelector('.carousel-description');
+      if (description && Object.hasOwn(SHORT_PROJECT_DESCRIPTIONS, title)) {
+        description.textContent = SHORT_PROJECT_DESCRIPTIONS[title];
+      }
+    });
+    const archiveLink = document.querySelector('#projects .section-heading a[href="projects.html"]');
+    if (archiveLink) archiveLink.textContent = `All ${slides.length} projects`;
+    const position = document.getElementById('carousel-position');
+    if (position) position.textContent = `01 / ${slides.length}`;
+  }
+
   if (track) {
     const slides = [...track.querySelectorAll('.carousel-slide')];
     const pauseButton = document.getElementById('carousel-pause');
@@ -132,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalBody = document.getElementById('modal-body');
   let modalTrigger = null;
   let inertRoots = [];
-  const escapeHTML = text => String(text).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
+
 
   function closeModal() {
     if (!modal || modal.hidden) return;
