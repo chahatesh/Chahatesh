@@ -166,12 +166,6 @@ const ADDITIONAL_PROJECTS = [
     "description": "I built a website for practicing stock chart patterns and guessing what happens next."
   },
   {
-    "id": "still-timer",
-    "title": "Still Timer",
-    "category": "Web",
-    "description": "A countdown timer with an adjustable dial, quick presets, and a chime."
-  },
-  {
     "id": "robotics-match-timer",
     "title": "Robotics Match Timer",
     "category": "Robotics",
@@ -192,13 +186,5 @@ const ADDITIONAL_PROJECTS = [
     "linkText": "Source on GitHub",
     "cover": "https://raw.githubusercontent.com/chahatesh/Hushline/main/docs/screenshots/home.png",
     "alt": "Hush dictation app dashboard"
-  },
-  {
-    "id": "platformer",
-    "title": "Platformer",
-    "category": "Game",
-    "description": "A browser game where you run and jump across platforms.",
-    "source": "https://chahatesh.itch.io/platformer",
-    "linkText": "Play the game"
   }
 ];

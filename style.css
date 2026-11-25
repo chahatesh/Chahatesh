@@ -381,3 +381,14 @@ button:disabled { cursor: wait; opacity: .6; }
 
 /* Omit the extra intro copy from the rendered landing page. */
 .home-intro .intro-eyebrow, .home-intro .intro-detail { display: none; }
+
+/* Haven Avon recap */
+.haven-recap { max-width: 760px; padding-bottom: 60px; }
+.haven-recap .page-hero .text-link { margin: 0 0 12px; }
+.haven-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 16px; padding: 24px 0; margin: 0 0 28px; border-block: 1px solid var(--line); }
+.haven-stats div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 4px; }
+.haven-stats dt { color: var(--muted); font-size: 13px; line-height: 1.4; }
+.haven-stats dd { margin: 0; font: 600 clamp(24px, 4vw, 34px)/1.1 var(--display); }
+.haven-recap section { margin-bottom: 28px; }
+.haven-recap section p { margin-top: 8px; }
+.haven-recap-footer { border-top: 1px solid var(--line); padding-top: 24px; }
