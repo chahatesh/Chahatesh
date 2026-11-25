@@ -107,7 +107,7 @@ const JOURNAL_PROJECTS = [
     "alt": "BetterBoard circuit board layout in KiCad",
     "source": "https://github.com/chahatesh/BetterBoard",
     "journal": "https://github.com/chahatesh/BetterBoard/blob/main/JOURNAL.md",
-    "cover": "https://raw.githubusercontent.com/chahatesh/BetterBoard/main/Images/Screenshot%202026-11-08%20131323.png"
+    "cover": "images/betterboard.png"
   },
   {
     "title": "MP3 Player",
@@ -115,7 +115,7 @@ const JOURNAL_PROJECTS = [
     "alt": "Custom MP3 player design",
     "source": "https://github.com/chahatesh/MP3-Player",
     "journal": "https://github.com/chahatesh/MP3-Player/blob/main/JOURNAL.md",
-    "cover": "https://raw.githubusercontent.com/chahatesh/MP3-Player/main/Images/Screenshot%202026-10-31%20205900.png"
+    "cover": "images/mp3-player.png"
   },
   {
     "title": "MIDI Keyboard",
@@ -123,7 +123,7 @@ const JOURNAL_PROJECTS = [
     "alt": "Custom MIDI keyboard layout",
     "source": "https://github.com/chahatesh/MIDI-Keyboard",
     "journal": "https://github.com/chahatesh/MIDI-Keyboard/blob/main/JOURNAL.md",
-    "cover": "https://raw.githubusercontent.com/chahatesh/MIDI-Keyboard/main/Images/Screenshot%202026-10-21%20173026.png"
+    "cover": "images/midi-keyboard.png"
   },
   {
     "title": "Holonomic Drivetrain",
@@ -131,7 +131,7 @@ const JOURNAL_PROJECTS = [
     "alt": "Holonomic drivetrain chassis in Onshape",
     "source": "https://github.com/chahatesh/X-drive-holonomic",
     "journal": "https://github.com/chahatesh/X-drive-holonomic/blob/main/JOURNAL.md",
-    "cover": "https://raw.githubusercontent.com/chahatesh/X-drive-holonomic/main/images/Screenshot%202026-10-18%20134421.png"
+    "cover": "images/holonomic-drivetrain.png"
   }
 ];
 
@@ -163,7 +163,27 @@ const ADDITIONAL_PROJECTS = [
     "id": "stock-market-practice",
     "title": "Stock Market Practice",
     "category": "Web",
-    "description": "I built a website for practicing stock chart patterns and guessing what happens next."
+    "description": "I built a website for practicing stock chart patterns and guessing what happens next.",
+    "source": "https://market-practice.wasmer.app/study.html",
+    "linkText": "Open live site"
+  },
+  {
+    "id": "fielddesk",
+    "title": "FieldDesk",
+    "category": "Web",
+    "description": "A web app project for REC Foundation robotics.",
+    "source": "https://fielddesk-recf.wasmer.app/",
+    "linkText": "Open live site"
+  },
+  {
+    "id": "motivate",
+    "title": "Motivate",
+    "category": "Web",
+    "description": "A goal tracker for planning the week and keeping up with tasks.",
+    "source": "https://motivate.wasmer.app/#today",
+    "linkText": "Open live site",
+    "cover": "images/motivate-goals.png",
+    "alt": "Motivate goal and task dashboard"
   },
   {
     "id": "robotics-match-timer",
@@ -184,7 +204,7 @@ const ADDITIONAL_PROJECTS = [
     "description": "A Windows app I built that turns speech into text. It’s still in testing.",
     "source": "https://github.com/chahatesh/Hushline",
     "linkText": "Source on GitHub",
-    "cover": "https://raw.githubusercontent.com/chahatesh/Hushline/main/docs/screenshots/home.png",
+    "cover": "images/hush-home.png",
     "alt": "Hush dictation app dashboard"
   }
 ];

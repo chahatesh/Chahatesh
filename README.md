@@ -1,6 +1,6 @@
 # Chahatesh - Portfolio
 
-I am a 13-year-old student engineer and developer. I build projects that combine AI, robotics, software, electronics, and mechanical engineering. My goal is to turn complex ideas into useful, fast, and accessible systems.      
+I am a 13-year-old student engineer and developer. I build projects that combine robotics, electronics, and software, including FieldDesk, Motivate, and Stock Market Practice.      
 
 ---
 
@@ -29,3 +29,9 @@ I am a 13-year-old student engineer and developer. I build projects that combine
 *   Recipient of the Stardance Certificate of Recognition (program supported by NASA, AMD, Microsoft, and GitHub).
 *   Two-time VEX IQ State Championship Qualifier.
 *   Selected for school robotics team 3 consecutive years.
+
+### Live projects
+
+* [FieldDesk](https://fielddesk-recf.wasmer.app/)
+* [Motivate](https://motivate.wasmer.app/#today)
+* [Stock Market Practice](https://market-practice.wasmer.app/study.html)
