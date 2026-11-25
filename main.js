@@ -45,25 +45,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const escapeHTML = text => String(text).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 
   const track = document.getElementById('carousel-track');
-  // Add the new builds before the carousel collects its slides.
-  if (track && typeof JOURNAL_PROJECTS !== 'undefined') {
+  // Insert extra projects before the carousel sets up its controls.
+  if (track) {
+    const journalProjects = typeof JOURNAL_PROJECTS === 'undefined' ? [] : JOURNAL_PROJECTS;
+    const additionalProjects = typeof ADDITIONAL_PROJECTS === 'undefined' ? [] : ADDITIONAL_PROJECTS;
     const firstSlide = track.querySelector('.carousel-slide');
     if (firstSlide) {
-      const journalSlides = JOURNAL_PROJECTS.map(project => {
-        const { title, source, journal, description, cover, alt } = project;
-        return `<article class="carousel-slide" role="group" aria-roledescription="slide" inert aria-hidden="true">
-<a class="carousel-preview" href="${escapeHTML(source)}" target="_blank" rel="noopener" aria-label="Explore ${escapeHTML(title)}">
+      const extraSlides = [...additionalProjects, ...journalProjects].map(project => {
+        const { title, source, journal, description, cover, alt, category, id, linkText } = project;
+        const label = category || (title === 'Holonomic Drivetrain' ? 'Robotics' : 'Electronics');
+        const preview = cover ? `<a class="carousel-preview" href="${escapeHTML(source)}" target="_blank" rel="noopener" aria-label="Explore ${escapeHTML(title)}">
 <img src="${escapeHTML(cover)}" alt="${escapeHTML(alt)}" loading="lazy" decoding="async" />
-</a>
+</a>` : '';
+        const archiveUrl = id ? `projects.html#${id}` : 'projects.html';
+        const href = journal || source || archiveUrl;
+        const text = journal ? 'Read the build journal' : (linkText || 'See on Projects');
+        const target = journal || source ? ' target="_blank" rel="noopener"' : '';
+        return `<article class="carousel-slide${cover ? '' : ' carousel-slide--text'}" role="group" aria-roledescription="slide" inert aria-hidden="true">
+${preview}
 <div class="carousel-blurb">
-<p class="carousel-category">${title === 'Holonomic Drivetrain' ? 'Robotics' : 'Electronics'}</p>
+<p class="carousel-category">${escapeHTML(label)}</p>
 <h3>${escapeHTML(title)}</h3>
 <p class="carousel-description">${escapeHTML(description)}</p>
-<a class="text-link" href="${escapeHTML(journal)}" target="_blank" rel="noopener">Read the build journal <span aria-hidden="true">↗</span></a>
+<a class="text-link" href="${escapeHTML(href)}"${target}>${escapeHTML(text)} <span aria-hidden="true">↗</span></a>
 </div>
 </article>`;
       }).join('\n');
-      firstSlide.insertAdjacentHTML('afterend', journalSlides);
+      firstSlide.insertAdjacentHTML('afterend', extraSlides);
     }
 
     const slides = [...track.querySelectorAll('.carousel-slide')];
@@ -71,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
       slide.setAttribute('aria-label', `${index + 1} of ${slides.length}`);
       const title = slide.querySelector('h3')?.textContent.trim();
       const description = slide.querySelector('.carousel-description');
-      if (description && Object.hasOwn(SHORT_PROJECT_DESCRIPTIONS, title)) {
+      if (description && typeof SHORT_PROJECT_DESCRIPTIONS !== 'undefined' && Object.hasOwn(SHORT_PROJECT_DESCRIPTIONS, title)) {
         description.textContent = SHORT_PROJECT_DESCRIPTIONS[title];
       }
     });

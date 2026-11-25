@@ -147,5 +147,58 @@ const SHORT_PROJECT_DESCRIPTIONS = {
   "StudyPath": "STEM practice that adjusts to each student, with a dashboard for teachers.",
   "WebOS": "A desktop-style interface that runs in your browser.",
   "Asteroid Survivor": "A browser game about dodging asteroids.",
-  "Remote Shutter": "A project for triggering a camera from a distance."
+  "Remote Shutter": "A project for triggering a camera from a distance.",
+  "Arduino Projects": "Smaller builds from my desk, including a tiny ESP32 display."
 };
+
+
+const ADDITIONAL_PROJECTS = [
+  {
+    "id": "four-channel-motor-driver",
+    "title": "4-Channel Motor Driver",
+    "category": "Electronics",
+    "description": "I built and tested an ESP32 board that can control four motors."
+  },
+  {
+    "id": "stock-market-practice",
+    "title": "Stock Market Practice",
+    "category": "Web",
+    "description": "I built a website for practicing stock chart patterns and guessing what happens next."
+  },
+  {
+    "id": "still-timer",
+    "title": "Still Timer",
+    "category": "Web",
+    "description": "A countdown timer with an adjustable dial, quick presets, and a chime."
+  },
+  {
+    "id": "robotics-match-timer",
+    "title": "Robotics Match Timer",
+    "category": "Robotics",
+    "description": "I made a 60-second timer for robot matches with a starting sound and simple controls."
+  },
+  {
+    "id": "home-nodes",
+    "title": "Home Nodes",
+    "category": "Electronics",
+    "description": "I built an ESP32 prototype that uses a distance sensor to trigger a servo."
+  },
+  {
+    "id": "hush-dictation",
+    "title": "Hush",
+    "category": "Software",
+    "description": "A Windows app I built that turns speech into text. It’s still in testing.",
+    "source": "https://github.com/chahatesh/Hushline",
+    "linkText": "Source on GitHub",
+    "cover": "https://raw.githubusercontent.com/chahatesh/Hushline/main/docs/screenshots/home.png",
+    "alt": "Hush dictation app dashboard"
+  },
+  {
+    "id": "platformer",
+    "title": "Platformer",
+    "category": "Game",
+    "description": "A browser game where you run and jump across platforms.",
+    "source": "https://chahatesh.itch.io/platformer",
+    "linkText": "Play the game"
+  }
+];

@@ -319,6 +319,7 @@ button:disabled { cursor: wait; opacity: .6; }
 .project-carousel .section-heading { margin-bottom: 18px; }
 .carousel-track { display: grid; overflow: hidden; position: relative; border: 1px solid #dce3e0; border-radius: 8px; touch-action: pan-y; }
 .carousel-slide { grid-area: 1 / 1; min-width: 0; visibility: hidden; opacity: 0; transform: translateX(100%); transition: transform 650ms cubic-bezier(.22,.68,0,1), opacity 500ms ease; pointer-events: none; }
+.carousel-slide--text { display: grid; align-items: center; }
 .carousel-slide.is-active { visibility: visible; opacity: 1; transform: translateX(0); pointer-events: auto; z-index: 1; }
 .carousel-slide.is-leaving { visibility: visible; opacity: 0; transform: translateX(-100%); }
 .carousel-track.is-reversing .carousel-slide { transform: translateX(-100%); }
